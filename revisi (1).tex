@@ -20,7 +20,6 @@
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 
-
 %alfan
 \newcommand{\alfan}[1]{{\color{blue}{\bf{Alfan says:}} \emph{#1}}}
 \newcommand{\D}{\phantom{D}}
@@ -30,7 +29,7 @@
 \begin{document}
 \twocolumn[
 \begin{center}
-{\LARGE \bfseries SafeSteer: Feature Steering Confidence-Gated untuk Adaptasi Domain Few-Shot pada Klasifikasi Malaria Mikroskopis \par}
+{\LARGE \bfseries \nama{SafeSteer}: Feature Steering Confidence-Gated untuk Adaptasi Domain Few-Shot pada Klasifikasi Malaria Mikroskopis \par}
 \vspace{1.5em}
 
     {\large Hubban Syadid$^1$, Nasha Zahira$^2$, Asyer Samuel Marpaung$^3$, Alfan Farizki Wicaksono$^4$ \par}
@@ -42,52 +41,51 @@
 \end{center}
 \vspace{1.5em}
 {
-\noindent \textbf{ABSTRAK} -- Malaria masih menjadi beban kesehatan masyarakat yang signifikan di Indonesia dengan lebih dari 90\% kasus terkonsentrasi di wilayah terpencil, sehingga membutuhkan metode skrining yang cepat dan konsisten pada fasilitas kesehatan primer. Namun, penerapan \textit{deep learning} di lapangan menghadapi dua kendala utama, yaitu penurunan performa akibat \textit{domain shift} saat model internasional diuji pada citra lokal serta keterbatasan infrastruktur komputasi dan data berlabel lokal untuk melakukan \textit{retraining}. Metode \textit{state of the art} yang ada umumnya membutuhkan pembaruan bobot yang berat secara komputasi. Di sisi lain, pendekatan \textit{constant-vector steering} terbukti secara matematis hanya menggeser \textit{decision threshold} tanpa meningkatkan \textit{discrimination capacity} model. Untuk menjawab tantangan tersebut, penelitian ini mengusulkan SafeSteer, sebuah kerangka kerja \textit{training-free domain adaptation} berbasis skenario \textit{few-shot} yang hanya membutuhkan 5 hingga 20 sampel data lokal per kelas tanpa pembaruan bobot model. Dievaluasi langsung pada dataset mikroskopis lokal Indonesia, PlasmoID, SafeSteer menggabungkan KernelSteer untuk \textit{sample-adaptive feature correction} berbasis kernel RBF, VoteGate untuk pengaturan kekuatan koreksi berbasis \textit{confidence gating}, dan \textit{recall-oriented threshold calibration}. Evaluasi pada tujuh subgrup PlasmoID menggunakan arsitektur ResNet-18 menunjukkan SafeSteer meningkatkan POOLED \textit{balanced accuracy} dari 0,713 menjadi 0,842 serta \textit{recall} dari 0,460 menjadi 0,811 dibanding metode \textit{zero-shot} ($p \leq 0{,}0001$). Berbeda dari \textit{fine-tuning} yang membutuhkan pembaruan bobot dan menurunkan akurasi \textit{source domain} sebesar 0,16 hingga 0,19, SafeSteer bekerja tanpa pelatihan ulang dan mempertahankan performa \textit{source domain} secara utuh. Pengujian \textit{support size} menunjukkan bahwa 5 sampel \textit{few-shot} per kelas sudah cukup untuk koreksi domain dasar, sedangkan 15 hingga 20 sampel per kelas menghasilkan \textit{threshold calibration} yang stabil. SafeSteer membuktikan efektivitas adaptasi domain yang hemat komputasi dan andal untuk skenario data lokal yang sangat terbatas.
+\noindent \textbf{ABSTRAK} -- Malaria masih menjadi beban kesehatan masyarakat yang signifikan di Indonesia dengan lebih dari 90\% kasus terkonsentrasi di wilayah terpencil, sehingga membutuhkan metode skrining yang cepat dan konsisten pada fasilitas kesehatan primer. Namun, penerapan \textit{deep learning} di lapangan menghadapi dua kendala utama, yaitu penurunan performa akibat \textit{domain shift} saat model internasional diuji pada citra lokal serta keterbatasan infrastruktur komputasi dan data berlabel lokal untuk melakukan \textit{retraining}. Metode \textit{state of the art} yang ada umumnya membutuhkan pembaruan bobot yang berat secara komputasi. Di sisi lain, pendekatan \textit{constant-vector steering} terbukti secara matematis hanya menggeser \textit{decision threshold} tanpa meningkatkan \textit{discrimination capacity} model. Untuk menjawab tantangan tersebut, penelitian ini mengusulkan \nama{SafeSteer}, sebuah kerangka kerja \textit{training-free domain adaptation} berbasis skenario \textit{few-shot} yang hanya membutuhkan 5 hingga 20 sampel data lokal per kelas tanpa pembaruan bobot model. Dievaluasi langsung pada dataset mikroskopis lokal Indonesia, \nama{PlasmoID}, \nama{SafeSteer} menggabungkan \nama{KernelSteer} untuk \textit{sample-adaptive feature correction} berbasis kernel \nama{RBF}, \nama{VoteGate} untuk pengaturan kekuatan koreksi berbasis \textit{confidence gating}, dan \textit{recall-oriented threshold calibration}. Evaluasi pada tujuh subgrup \nama{PlasmoID} menggunakan arsitektur \nama{ResNet-18} menunjukkan \nama{SafeSteer} meningkatkan POOLED \textit{balanced accuracy} dari 0,713 menjadi 0,842 serta \textit{recall} dari 0,460 menjadi 0,811 dibanding metode \textit{zero-shot} ($p \leq 0{,}0001$). Berbeda dari \textit{fine-tuning} yang membutuhkan pembaruan bobot dan menurunkan akurasi \textit{source domain} sebesar 0,16 hingga 0,19, \nama{SafeSteer} bekerja tanpa pelatihan ulang dan mempertahankan performa \textit{source domain} secara utuh. Pengujian \textit{support size} menunjukkan bahwa 5 sampel \textit{few-shot} per kelas sudah cukup untuk koreksi domain dasar, sedangkan 15 hingga 20 sampel per kelas menghasilkan \textit{threshold calibration} yang stabil. \nama{SafeSteer} membuktikan efektivitas adaptasi domain yang hemat komputasi dan andal untuk skenario data lokal yang sangat terbatas.
 \vspace{0.8em}
 
-\noindent \textbf{KATA KUNCI} -- Malaria, domain shift, few-shot learning, feature steering, confidence-gating, klasifikasi citra medis, ResNet-18
+\noindent \textbf{KATA KUNCI} -- Malaria, domain shift, few-shot learning, feature steering, confidence-gating, klasifikasi citra medis, \nama{ResNet-18}
 
 \vspace{0.8em}
-\noindent \textbf{ABSTRACT} -- Malaria remains a significant public health burden in Indonesia, with more than 90\% of cases concentrated in remote regions, creating a need for rapid and consistent screening methods at primary healthcare facilities. However, the deployment of \textit{deep learning} in the field faces two main challenges: performance degradation due to \textit{domain shift} when models trained on international datasets are applied to local images, and limited computational infrastructure and locally labeled data for \textit{retraining}. Existing \textit{state-of-the-art} methods generally require computationally intensive model weight updates. Meanwhile, \textit{constant-vector steering} has been shown mathematically to only shift the \textit{decision threshold} without improving the model's \textit{discrimination capacity}. To address these challenges, this study proposes SafeSteer, a \textit{training-free domain adaptation} framework designed for a \textit{few-shot} setting that requires only 5 to 20 local samples per class without updating model weights. Evaluated directly on PlasmoID, a local Indonesian microscopic malaria dataset, SafeSteer combines KernelSteer for RBF kernel-based \textit{sample-adaptive feature correction}, VoteGate for \textit{confidence-gated} correction strength, and \textit{recall-oriented threshold calibration}. Evaluation across seven PlasmoID subgroups using the ResNet-18 architecture shows that SafeSteer improves POOLED \textit{balanced accuracy} from 0.713 to 0.842 and \textit{recall} from 0.460 to 0.811 compared with \textit{zero-shot} ($p \leq 0.0001$). In contrast to \textit{fine-tuning}, which requires weight updates and reduces \textit{source-domain} accuracy by 0.16 to 0.19, SafeSteer operates without retraining and preserves \textit{source-domain} performance. Evaluation of \textit{support size} shows that 5 \textit{few-shot} samples per class are sufficient for basic domain correction, while 15 to 20 samples per class provide stable \textit{threshold calibration}. These results demonstrate that SafeSteer enables computationally efficient domain adaptation without retraining in highly data-limited local settings.
+\noindent \textbf{ABSTRACT} -- Malaria remains a significant public health burden in Indonesia, with more than 90\% of cases concentrated in remote regions, creating a need for rapid and consistent screening methods at primary healthcare facilities. However, the deployment of \textit{deep learning} in the field faces two main challenges: performance degradation due to \textit{domain shift} when models trained on international datasets are applied to local images, and limited computational infrastructure and locally labeled data for \textit{retraining}. Existing \textit{state-of-the-art} methods generally require computationally intensive model weight updates. Meanwhile, \textit{constant-vector steering} has been shown mathematically to only shift the \textit{decision threshold} without improving the model's \textit{discrimination capacity}. To address these challenges, this study proposes \nama{SafeSteer}, a \textit{training-free domain adaptation} framework designed for a \textit{few-shot} setting that requires only 5 to 20 local samples per class without updating model weights. Evaluated directly on \nama{PlasmoID}, a local Indonesian microscopic malaria dataset, \nama{SafeSteer} combines \nama{KernelSteer} for \nama{RBF} kernel-based \textit{sample-adaptive feature correction}, \nama{VoteGate} for \textit{confidence-gated} correction strength, and \textit{recall-oriented threshold calibration}. Evaluation across seven \nama{PlasmoID} subgroups using the \nama{ResNet-18} architecture shows that \nama{SafeSteer} improves POOLED \textit{balanced accuracy} from 0.713 to 0.842 and \textit{recall} from 0.460 to 0.811 compared with \textit{zero-shot} ($p \leq 0.0001$). In contrast to \textit{fine-tuning}, which requires weight updates and reduces \textit{source-domain} accuracy by 0.16 to 0.19, \nama{SafeSteer} operates without retraining and preserves \textit{source-domain} performance. Evaluation of \textit{support size} shows that 5 \textit{few-shot} samples per class are sufficient for basic domain correction, while 15 to 20 samples per class provide stable \textit{threshold calibration}. These results demonstrate that \nama{SafeSteer} enables computationally efficient domain adaptation without retraining in highly data-limited local settings.
 \vspace{0.8em}
 
-\noindent \textbf{KEYWORDS} -- Malaria, domain shift, few-shot learning, feature steering, confidence-gating, medical image classification, ResNet-18
+\noindent \textbf{KEYWORDS} -- Malaria, domain shift, few-shot learning, feature steering, confidence-gating, medical image classification, \nama{ResNet-18}
 }
 \vspace{2em}
 ]
 \section{PENDAHULUAN}
 \subsection{Latar Belakang}
 Malaria masih menjadi salah satu beban kesehatan masyarakat yang signifikan di Indonesia. Berdasarkan \textit{World Malaria Report} 2025, Indonesia mencatat sekitar 631.000 kasus malaria, dengan lebih dari 90\% kasus tersebut berasal dari Papua \cite{b1}. Tingginya konsentrasi kasus di wilayah dengan tantangan geografis, disertai keterbatasan tenaga kesehatan terlatih dan fasilitas laboratorium, membuat diagnosis mikroskopis manual sulit dilakukan secara cepat dan konsisten di lapangan.
-Kondisi tersebut berkaitan dengan pencapaian \textit{Sustainable Development Goals} (SDGs), khususnya Goal 3 (\textit{Good Health and Well-being}) target 3.3 serta Goal 10 (\textit{Reduced Inequalities}). Di tingkat nasional, Kementerian Kesehatan Republik Indonesia menerapkan strategi TOKEN (Temukan, Obati, Kendalikan vektor Nyamuk) untuk mendukung target eliminasi malaria pada tahun 2030. Pilar ``Temukan'' membutuhkan metode skrining yang konsisten pada fasilitas kesehatan primer, termasuk di wilayah dengan keterbatasan infrastruktur. Tantangan ini juga dipengaruhi oleh keragaman kondisi akuisisi citra dan spesies \textit{Plasmodium} yang ditemukan di Indonesia, seperti \textit{P. falciparum}, \textit{P. vivax}, \textit{P. malariae}, dan \textit{P. ovale}.
+Kondisi tersebut berkaitan dengan pencapaian \textit{Sustainable Development Goals} (\nama{SDGs}), khususnya Goal 3 (\textit{Good Health and Well-being}) target 3.3 serta Goal 10 (\textit{Reduced Inequalities}). Di tingkat nasional, Kementerian Kesehatan Republik Indonesia menerapkan strategi \nama{TOKEN} (Temukan, Obati, Kendalikan vektor Nyamuk) untuk mendukung target eliminasi malaria pada tahun 2030. Pilar ``Temukan'' membutuhkan metode skrining yang konsisten pada fasilitas kesehatan primer, termasuk di wilayah dengan keterbatasan infrastruktur. Tantangan ini juga dipengaruhi oleh keragaman kondisi akuisisi citra dan spesies \textit{Plasmodium} yang ditemukan di Indonesia, seperti \textit{P. falciparum}, \textit{P. vivax}, \textit{P. malariae}, dan \textit{P. ovale}.
 
-\textit{Deep learning}, khususnya \textit{convolutional neural network} (CNN), dapat memberikan performa tinggi pada klasifikasi parasit malaria ketika data pengujian memiliki distribusi yang serupa dengan data pelatihan. Namun, performa dapat menurun ketika model diterapkan pada citra dengan instrumen atau kondisi akuisisi berbeda, yang dikenal sebagai \textit{domain shift}. Kanakasabapathy et al. menunjukkan penurunan performa model klasifikasi malaria pada citra dari perangkat mikroskop berbeda dan mengusulkan MD-net sebagai pendekatan adaptasi berbasis \textit{adversarial learning} \cite{b2}. Pendekatan \textit{few-shot} juga telah digunakan untuk mengatasi keterbatasan data target pada klasifikasi malaria dan berbagai tugas citra medis \cite{b3}, \cite{b4}, \cite{b5}, \cite{b6}, \cite{b7}, \cite{b8}, \cite{b9}. Namun, pendekatan tersebut umumnya tetap memerlukan optimisasi bobot atau parameter tambahan, sehingga menimbulkan kebutuhan komputasi pelatihan pada domain target.
+\textit{Deep learning}, khususnya \textit{convolutional neural network} (\nama{CNN}), dapat memberikan performa tinggi pada klasifikasi parasit malaria ketika data pengujian memiliki distribusi yang serupa dengan data pelatihan. Namun, performa dapat menurun ketika model diterapkan pada citra dengan instrumen atau kondisi akuisisi berbeda, yang dikenal sebagai \textit{domain shift}. Kanakasabapathy et al. menunjukkan penurunan performa model klasifikasi malaria pada citra dari perangkat mikroskop berbeda dan mengusulkan \nama{MD-net} sebagai pendekatan adaptasi berbasis \textit{adversarial learning} \cite{b2}. Pendekatan \textit{few-shot} juga telah digunakan untuk mengatasi keterbatasan data target pada klasifikasi malaria dan berbagai tugas citra medis \cite{b3}, \cite{b4}, \cite{b5}, \cite{b6}, \cite{b7}, \cite{b8}, \cite{b9}. Namun, pendekatan tersebut umumnya tetap memerlukan optimisasi bobot atau parameter tambahan, sehingga menimbulkan kebutuhan komputasi pelatihan pada domain target.
 
-Pendekatan alternatif dapat ditemukan dalam penelitian mengenai \textit{activation steering}, yang menunjukkan bahwa representasi internal model dapat dimanipulasi melalui intervensi pada ruang aktivasi tanpa melakukan pembaruan bobot model \cite{b10}, \cite{b11}. Prinsip serupa kemudian dikembangkan pada model \textit{vision-language} biomedis \cite{b12}, sementara MAUP menunjukkan bahwa strategi \textit{training-free} juga dapat digunakan untuk adaptasi lintas domain pada segmentasi citra medis dengan memanfaatkan informasi ketidakpastian prediksi \cite{b13}. Temuan-temuan tersebut menunjukkan bahwa adaptasi model tidak selalu harus dilakukan melalui pembaruan parameter, tetapi dapat dilakukan dengan memanfaatkan representasi internal dan informasi prediksi yang telah tersedia. Pendekatan ini membuka peluang untuk melakukan adaptasi secara \textit{training-free}, tetapi efektivitasnya bergantung pada bagaimana koreksi diterapkan pada ruang fitur. Translasi fitur menggunakan satu vektor koreksi konstan untuk setiap kelas menunjukkan keterbatasan dalam meningkatkan kemampuan diskriminasi model. Analisis terhadap \textit{classification head} yang bersifat linear menunjukkan bahwa translasi konstan tersebut hanya menghasilkan perubahan logit yang konstan terhadap setiap sampel, sehingga secara fungsional lebih menyerupai pergeseran \textit{decision threshold} daripada perubahan representasi yang adaptif terhadap karakteristik masing-masing sampel.
+Pendekatan alternatif dapat ditemukan dalam penelitian mengenai \textit{activation steering}, yang menunjukkan bahwa representasi internal model dapat dimanipulasi melalui intervensi pada ruang aktivasi tanpa melakukan pembaruan bobot model \cite{b10}, \cite{b11}. Prinsip serupa kemudian dikembangkan pada model \textit{vision-language} biomedis \cite{b12}, sementara \nama{MAUP} menunjukkan bahwa strategi \textit{training-free} juga dapat digunakan untuk adaptasi lintas domain pada segmentasi citra medis dengan memanfaatkan informasi ketidakpastian prediksi \cite{b13}. Temuan-temuan tersebut menunjukkan bahwa adaptasi model tidak selalu harus dilakukan melalui pembaruan parameter, tetapi dapat dilakukan dengan memanfaatkan representasi internal dan informasi prediksi yang telah tersedia. Pendekatan ini membuka peluang untuk melakukan adaptasi secara \textit{training-free}, tetapi efektivitasnya bergantung pada bagaimana koreksi diterapkan pada ruang fitur. Translasi fitur menggunakan satu vektor koreksi konstan untuk setiap kelas menunjukkan keterbatasan dalam meningkatkan kemampuan diskriminasi model. Analisis terhadap \textit{classification head} yang bersifat linear menunjukkan bahwa translasi konstan tersebut hanya menghasilkan perubahan logit yang konstan terhadap setiap sampel, sehingga secara fungsional lebih menyerupai pergeseran \textit{decision threshold} daripada perubahan representasi yang adaptif terhadap karakteristik masing-masing sampel.
 
-Hal ini menjadi dasar pengembangan SafeSteer dalam penelitian ini. Alih-alih menerapkan satu vektor koreksi yang sama untuk seluruh sampel dalam suatu kelas, SafeSteer menggunakan KernelSteer untuk menghasilkan koreksi fitur yang bergantung pada posisi setiap sampel terhadap \textit{support set} pada ruang fitur. Dengan demikian, arah dan besarnya koreksi dapat disesuaikan berdasarkan karakteristik lokal representasi target. SafeSteer selanjutnya dilengkapi dengan VoteGate untuk mengatur kekuatan intervensi berdasarkan informasi yang diperoleh dari hubungan sampel terhadap \textit{support set}. Pendekatan ini mempertahankan sifat \textit{training-free} karena proses adaptasi dilakukan pada representasi fitur saat inferensi tanpa memperbarui bobot \textit{backbone} maupun \textit{classification head}.
+Hal ini menjadi dasar pengembangan \nama{SafeSteer} dalam penelitian ini. Alih-alih menerapkan satu vektor koreksi yang sama untuk seluruh sampel dalam suatu kelas, \nama{SafeSteer} menggunakan \nama{KernelSteer} untuk menghasilkan koreksi fitur yang bergantung pada posisi setiap sampel terhadap \textit{support set} pada ruang fitur. Dengan demikian, arah dan besarnya koreksi dapat disesuaikan berdasarkan karakteristik lokal representasi target. \nama{SafeSteer} selanjutnya dilengkapi dengan \nama{VoteGate} untuk mengatur kekuatan intervensi berdasarkan informasi yang diperoleh dari hubungan sampel terhadap \textit{support set}. Pendekatan ini mempertahankan sifat \textit{training-free} karena proses adaptasi dilakukan pada representasi fitur saat inferensi tanpa memperbarui bobot \textit{backbone} maupun \textit{classification head}.
 
-Berdasarkan uraian di atas, masalah penelitian yang diangkat adalah belum terukurnya secara sistematis besar dan karakteristik \textit{domain gap} antara model klasifikasi malaria yang dilatih pada dataset internasional (NIH/NLM) dan domain akuisisi lokal Indonesia (PlasmoID), serta belum tersedianya metode adaptasi domain yang efektif namun tetap \textit{training-free} pada kondisi data target yang sangat terbatas. Sejalan dengan itu, penelitian ini bertujuan mengukur \textit{domain gap} tersebut secara sistematis dan mengembangkan serta mengevaluasi SafeSteer sebagai metode adaptasi domain \textit{training-free} berbasis KernelSteer dan VoteGate untuk menjawab masalah tersebut. Rumusan pertanyaan penelitian dan tujuan penelitian secara rinci disajikan pada Bab~\ref{masalah} dan Bab~\ref{tujuan}.
+Berdasarkan uraian di atas, masalah penelitian yang diangkat adalah belum terukurnya secara sistematis besar dan karakteristik \textit{domain gap} antara model klasifikasi malaria yang dilatih pada dataset internasional (\nama{NIH/NLM}) dan domain akuisisi lokal Indonesia (\nama{PlasmoID}), serta belum tersedianya metode adaptasi domain yang efektif namun tetap \textit{training-free} pada kondisi data target yang sangat terbatas. Sejalan dengan itu, penelitian ini bertujuan mengukur \textit{domain gap} tersebut secara sistematis dan mengembangkan serta mengevaluasi \nama{SafeSteer} sebagai metode adaptasi domain \textit{training-free} berbasis \nama{KernelSteer} dan \nama{VoteGate} untuk menjawab masalah tersebut. Rumusan pertanyaan penelitian dan tujuan penelitian secara rinci disajikan pada Bab~\ref{masalah} dan Bab~\ref{tujuan}.
 
 \subsection{Manfaat Penelitian}
-Manfaat penelitian ini mencakup dua aspek. Secara metodologis, penelitian ini memberikan evaluasi terhadap efektivitas koreksi fitur \textit{training-free} yang adaptif per-sampel untuk mengatasi \textit{domain shift} pada kondisi \textit{few-shot}, serta membandingkannya dengan pendekatan berbasis pembaruan bobot. Secara terapan, penelitian ini menghasilkan metode adaptasi yang tidak memerlukan pembaruan bobot model sehingga berpotensi mengurangi kebutuhan komputasi pada fasilitas kesehatan primer dengan keterbatasan infrastruktur. Hasil penelitian juga dapat memberikan informasi mengenai kebutuhan data lokal dan konsistensi metode pada keragaman domain target sebagai dasar teknis untuk mendukung pilar ``Temukan'' dalam strategi TOKEN Kementerian Kesehatan Republik Indonesia.
+Manfaat penelitian ini mencakup dua aspek. Secara metodologis, penelitian ini memberikan evaluasi terhadap efektivitas koreksi fitur \textit{training-free} yang adaptif per-sampel untuk mengatasi \textit{domain shift} pada kondisi \textit{few-shot}, serta membandingkannya dengan pendekatan berbasis pembaruan bobot. Secara terapan, penelitian ini menghasilkan metode adaptasi yang tidak memerlukan pembaruan bobot model sehingga berpotensi mengurangi kebutuhan komputasi pada fasilitas kesehatan primer dengan keterbatasan infrastruktur. Hasil penelitian juga dapat memberikan informasi mengenai kebutuhan data lokal dan konsistensi metode pada keragaman domain target sebagai dasar teknis untuk mendukung pilar ``Temukan'' dalam strategi \nama{TOKEN} Kementerian Kesehatan Republik Indonesia.
 
 \subsection{Batasan Penelitian}
-Penelitian dibatasi pada klasifikasi biner tingkat sel menggunakan \textit{patch} RGB 224$\times$224, dengan NIH/NLM sebagai domain sumber dan PlasmoID sebagai domain target. Model dilatih pada \textit{Plasmodium falciparum} dan dievaluasi pada tujuh subgrup spesies atau stadium. Karena lokasi \textit{patch} berasal dari anotasi manusia, SafeSteer hanya mencakup klasifikasi dan belum bersifat \textit{end-to-end}. Subgrup dengan sampel terbatas diperlakukan sebagai \textit{underpowered} dan tidak menjadi dasar klaim utama, serta penelitian tidak mencakup \textit{deployment} klinis. Perbandingan \textit{fine-tuning} hanya mencakup \textit{baseline} dan \textbf{L2-SP}. LoRA dan \textit{visual prompt tuning} tidak dievaluasi karena menggunakan ResNet-18, sehingga hasil hanya berlaku pada konfigurasi yang diuji. SafeSteer mengasumsikan 5--20 sampel \textit{support} per kelas yang telah diverifikasi tenaga ahli. Proses memperoleh verifikasi tersebut berada di luar cakupan penelitian.
-
+Penelitian dibatasi pada klasifikasi biner tingkat sel menggunakan \textit{patch} \nama{RGB} 224$\times$224, dengan \nama{NIH/NLM} sebagai domain sumber dan \nama{PlasmoID} sebagai domain target. Model dilatih pada \textit{Plasmodium falciparum} dan dievaluasi pada tujuh subgrup spesies atau stadium. Karena lokasi \textit{patch} berasal dari anotasi manusia, \nama{SafeSteer} hanya mencakup klasifikasi dan belum bersifat \textit{end-to-end}. Subgrup dengan sampel terbatas diperlakukan sebagai \textit{underpowered} dan tidak menjadi dasar klaim utama, serta penelitian tidak mencakup \textit{deployment} klinis. Perbandingan \textit{fine-tuning} hanya mencakup \textit{baseline} dan \textbf{\nama{L2-SP}}. \nama{LoRA} dan \textit{visual prompt tuning} tidak dievaluasi karena menggunakan \nama{ResNet-18}, sehingga hasil hanya berlaku pada konfigurasi yang diuji. \nama{SafeSteer} mengasumsikan 5--20 sampel \textit{support} per kelas yang telah diverifikasi tenaga ahli. Proses memperoleh verifikasi tersebut berada di luar cakupan penelitian.
 
 \subsection{Related Work dan Kebaruan Penelitian}
-\textit{Domain shift} pada citra malaria telah didokumentasikan oleh Kanakasabapathy et al., yang menunjukkan penurunan performa model ketika diuji pada citra dari mikroskop meja, portabel, dan \textit{smartphone}, serta mengusulkan MD-net berbasis \textit{adversarial learning} yang tetap membutuhkan pelatihan \textit{discriminator} dan data target dalam jumlah besar \cite{b2}. Rajaraman et al. menunjukkan bahwa CNN \textit{pre-trained} efektif sebagai \textit{feature extractor} untuk klasifikasi parasit malaria pada citra NIH \cite{b15}, yang mendasari pemilihan \textit{backbone pre-trained} pada penelitian ini.
+\textit{Domain shift} pada citra malaria telah didokumentasikan oleh Kanakasabapathy et al., yang menunjukkan penurunan performa model ketika diuji pada citra dari mikroskop meja, portabel, dan \textit{smartphone}, serta mengusulkan \nama{MD-net} berbasis \textit{adversarial learning} yang tetap membutuhkan pelatihan \textit{discriminator} dan data target dalam jumlah besar \cite{b2}. Rajaraman et al. menunjukkan bahwa \nama{CNN} \textit{pre-trained} efektif sebagai \textit{feature extractor} untuk klasifikasi parasit malaria pada citra \nama{NIH} \cite{b15}, yang mendasari pemilihan \textit{backbone pre-trained} pada penelitian ini.
 
-Pada ranah \textit{few-shot learning} dan \textit{few-shot domain adaptation}, berbagai studi memanfaatkan sedikit sampel target untuk klasifikasi sel malaria dan citra medis lainnya \cite{b3}, \cite{b4}, \cite{b6}, \cite{b7}, \cite{b8}, \cite{b9}, namun umumnya tetap memerlukan optimisasi atau pembaruan parameter model. Pendekatan berbasis \textit{kernel} seperti RKHS-MMD menyelaraskan distribusi sumber-target pada ruang \textit{Reproducing Kernel Hilbert Space} tanpa pembaruan bobot \cite{b14}, sedangkan Matching Networks dan ProKeR menunjukkan bahwa hubungan non-parametrik antara sampel \textit{support} dan kueri dapat dimanfaatkan langsung pada ruang representasi tanpa pelatihan ulang penuh \cite{b16}, \cite{b17} -- perspektif yang mendasari desain KernelSteer pada penelitian ini.
+Pada ranah \textit{few-shot learning} dan \textit{few-shot domain adaptation}, berbagai studi memanfaatkan sedikit sampel target untuk klasifikasi sel malaria dan citra medis lainnya \cite{b3}, \cite{b4}, \cite{b6}, \cite{b7}, \cite{b8}, \cite{b9}, namun umumnya tetap memerlukan optimisasi atau pembaruan parameter model. Pendekatan berbasis \textit{kernel} seperti \nama{RKHS-MMD} menyelaraskan distribusi sumber-target pada ruang \textit{Reproducing Kernel Hilbert Space} tanpa pembaruan bobot \cite{b14}, sedangkan Matching Networks dan ProKeR menunjukkan bahwa hubungan non-parametrik antara sampel \textit{support} dan kueri dapat dimanfaatkan langsung pada ruang representasi tanpa pelatihan ulang penuh \cite{b16}, \cite{b17} -- perspektif yang mendasari desain \nama{KernelSteer} pada penelitian ini.
 
-\textit{Activation steering} menunjukkan bahwa representasi internal model dapat dimanipulasi melalui intervensi pada ruang aktivasi tanpa pembaruan bobot \cite{b10}, \cite{b11}, dan telah diadaptasi pada model \textit{vision-language} biomedis melalui Evi-Steer, meski masih memperbarui sebagian kecil parameter (0,11\%) \cite{b12}. Namun, translasi menggunakan satu vektor koreksi konstan terbukti secara matematis setara dengan pergeseran \textit{decision threshold} pada \textit{classification head} linear, sehingga tidak menyesuaikan karakteristik tiap sampel -- keterbatasan yang memotivasi penggunaan \textit{bandwidth kernel} berbasis \textit{median heuristic} pada KernelSteer \cite{b18}. Pada sisi \textit{confidence-gating}, MAUP menunjukkan strategi \textit{training-free} berbasis ketidakpastian untuk adaptasi segmentasi citra medis lintas domain \cite{b13}, sejalan dengan prinsip kalibrasi kepercayaan model \cite{b19}, \textit{distance-weighted nearest neighbor} \cite{b20}, dan \textit{neighborhood consensus} \cite{b21} yang mendasari VoteGate. Dataset PlasmoID, yang menyediakan 559 citra mikroskopis dengan 691 anotasi parasit tervalidasi dari wilayah rural Indonesia \cite{b22}, digunakan sebagai domain target untuk merepresentasikan keragaman spesies dan kondisi akuisisi lokal. 
+\textit{Activation steering} menunjukkan bahwa representasi internal model dapat dimanipulasi melalui intervensi pada ruang aktivasi tanpa pembaruan bobot \cite{b10}, \cite{b11}, dan telah diadaptasi pada model \textit{vision-language} biomedis melalui \nama{Evi-Steer}, meski masih memperbarui sebagian kecil parameter (0,11\%) \cite{b12}. Namun, translasi menggunakan satu vektor koreksi konstan terbukti secara matematis setara dengan pergeseran \textit{decision threshold} pada \textit{classification head} linear, sehingga tidak menyesuaikan karakteristik tiap sampel -- keterbatasan yang memotivasi penggunaan \textit{bandwidth kernel} berbasis \textit{median heuristic} pada \nama{KernelSteer} \cite{b18}. Pada sisi \textit{confidence-gating}, \nama{MAUP} menunjukkan strategi \textit{training-free} berbasis ketidakpastian untuk adaptasi segmentasi citra medis lintas domain \cite{b13}, sejalan dengan prinsip kalibrasi kepercayaan model \cite{b19}, \textit{distance-weighted nearest neighbor} \cite{b20}, dan \textit{neighborhood consensus} \cite{b21} yang mendasari \nama{VoteGate}. Dataset \nama{PlasmoID}, yang menyediakan 559 citra mikroskopis dengan 691 anotasi parasit tervalidasi dari wilayah rural Indonesia \cite{b22}, digunakan sebagai domain target untuk merepresentasikan keragaman spesies dan kondisi akuisisi lokal.
 
-Kebaruan penelitian ini terletak pada empat aspek utama. Pertama, penelitian ini memberikan analisis formal mengenai keterbatasan \textit{constant-vector steering} dalam mengubah kapasitas diskriminasi model. Kedua, penelitian ini mengembangkan KernelSteer sebagai mekanisme \textit{sample-adaptive feature correction} untuk mengatasi keterbatasan tersebut. Ketiga, VoteGate digunakan sebagai mekanisme \textit{confidence-gating} untuk menyesuaikan kekuatan intervensi pada tingkat sampel. Keempat, pendekatan yang diusulkan dievaluasi secara sistematis pada berbagai subgrup spesies dan stadium parasit dalam data lokal Indonesia untuk menilai efektivitasnya pada kondisi \textit{domain shift} yang beragam. SafeSteer selanjutnya dibandingkan dengan pendekatan berbasis pembaruan parameter, seperti MD-net \cite{b2}, MJDOT \cite{b7}, PFMNet \cite{b8}, dan RKHS-MMD \cite{b14}, serta pendekatan \textit{parameter-efficient} seperti Evi-Steer \cite{b12}, untuk menilai sejauh mana adaptasi \textit{training-free} dapat memberikan performa yang kompetitif tanpa menambah kebutuhan komputasi pelatihan pada domain target.
+Kebaruan penelitian ini terletak pada empat aspek utama. Pertama, penelitian ini memberikan analisis formal mengenai keterbatasan \textit{constant-vector steering} dalam mengubah kapasitas diskriminasi model. Kedua, penelitian ini mengembangkan \nama{KernelSteer} sebagai mekanisme \textit{sample-adaptive feature correction} untuk mengatasi keterbatasan tersebut. Ketiga, \nama{VoteGate} digunakan sebagai mekanisme \textit{confidence-gating} untuk menyesuaikan kekuatan intervensi pada tingkat sampel. Keempat, pendekatan yang diusulkan dievaluasi secara sistematis pada berbagai subgrup spesies dan stadium parasit dalam data lokal Indonesia untuk menilai efektivitasnya pada kondisi \textit{domain shift} yang beragam. \nama{SafeSteer} selanjutnya dibandingkan dengan pendekatan berbasis pembaruan parameter, seperti \nama{MD-net} \cite{b2}, \nama{MJDOT} \cite{b7}, \nama{PFMNet} \cite{b8}, dan \nama{RKHS-MMD} \cite{b14}, serta pendekatan \textit{parameter-efficient} seperti \nama{Evi-Steer} \cite{b12}, untuk menilai sejauh mana adaptasi \textit{training-free} dapat memberikan performa yang kompetitif tanpa menambah kebutuhan komputasi pelatihan pada domain target.
 
-Tabel~\ref{tab:sota} merangkum posisi pendekatan-pendekatan yang telah dibahas di atas terhadap empat kriteria tersebut. MD-net \cite{b2}, MJDOT \cite{b7}, dan PFMNet \cite{b8} secara konsisten membutuhkan pembaruan parameter pada domain target, sehingga tetap menyisakan kebutuhan komputasi pelatihan meskipun jumlah sampel target yang diperlukan relatif kecil. RKHS-MMD \cite{b14} bersifat \textit{training-free}, tetapi koreksinya berupa translasi konstan pada level distribusi sehingga tidak menyesuaikan posisi tiap sampel secara individual. Evi-Steer \cite{b12} memanfaatkan estimasi ketidakpastian untuk mengarahkan kekuatan adaptasi, namun tetap memperbarui sebagian kecil parameter model sehingga belum sepenuhnya \textit{training-free}. MAUP \cite{b13} training-free dan berbasis ketidakpastian, tetapi dirancang untuk \textit{prompting} pada segmentasi, bukan koreksi representasi fitur untuk klasifikasi. Tidak satu pun dari pendekatan tersebut yang dievaluasi pada keragaman spesies dan stadium parasit \textit{Plasmodium} yang ditemukan di Indonesia. Celah inilah yang mendasari empat aspek kebaruan SafeSteer yang telah disebutkan sebelumnya.
- 
+Tabel~\ref{tab:sota} merangkum posisi pendekatan-pendekatan yang telah dibahas di atas terhadap empat kriteria tersebut. \nama{MD-net} \cite{b2}, \nama{MJDOT} \cite{b7}, dan \nama{PFMNet} \cite{b8} secara konsisten membutuhkan pembaruan parameter pada domain target, sehingga tetap menyisakan kebutuhan komputasi pelatihan meskipun jumlah sampel target yang diperlukan relatif kecil. \nama{RKHS-MMD} \cite{b14} bersifat \textit{training-free}, tetapi koreksinya berupa translasi konstan pada level distribusi sehingga tidak menyesuaikan posisi tiap sampel secara individual. \nama{Evi-Steer} \cite{b12} memanfaatkan estimasi ketidakpastian untuk mengarahkan kekuatan adaptasi, namun tetap memperbarui sebagian kecil parameter model sehingga belum sepenuhnya \textit{training-free}. \nama{MAUP} \cite{b13} training-free dan berbasis ketidakpastian, tetapi dirancang untuk \textit{prompting} pada segmentasi, bukan koreksi representasi fitur untuk klasifikasi. Tidak satu pun dari pendekatan tersebut yang dievaluasi pada keragaman spesies dan stadium parasit \textit{Plasmodium} yang ditemukan di Indonesia. Celah inilah yang mendasari empat aspek kebaruan \nama{SafeSteer} yang telah disebutkan sebelumnya.
+
 \begin{table}[H]
-\caption{Posisi SafeSteer terhadap Pendekatan Terkait}
+\caption{Posisi \nama{SafeSteer} terhadap Pendekatan Terkait}
 \label{tab:sota}
 \centering
 \footnotesize
@@ -95,89 +93,78 @@ Tabel~\ref{tab:sota} merangkum posisi pendekatan-pendekatan yang telah dibahas d
 \toprule
 \textbf{Metode} & \textbf{TF} & \textbf{SA} & \textbf{CG} & \textbf{MS} \\
 \midrule
-MD-net \cite{b2}      & -- & -- & -- & -- \\
-MJDOT \cite{b7}        & -- & -- & -- & -- \\
-PFMNet \cite{b8}       & -- & -- & -- & -- \\
-RKHS-MMD \cite{b14}    & \checkmark & -- & -- & -- \\
-Evi-Steer \cite{b12}   & -- & \checkmark & -- & -- \\
-MAUP \cite{b13}        & \checkmark & -- & \checkmark & -- \\
-\textbf{SafeSteer (usulan)} & \checkmark & \checkmark & \checkmark & \checkmark \\
+\nama{MD-net} \cite{b2} & -- & -- & -- & -- \\
+\nama{MJDOT} \cite{b7} & -- & -- & -- & -- \\
+\nama{PFMNet} \cite{b8} & -- & -- & -- & -- \\
+\nama{RKHS-MMD} \cite{b14} & \checkmark & -- & -- & -- \\
+\nama{Evi-Steer} \cite{b12} & -- & \checkmark & -- & -- \\
+\nama{MAUP} \cite{b13} & \checkmark & -- & \checkmark & -- \\
+\textbf{\nama{SafeSteer} (usulan)} & \checkmark & \checkmark & \checkmark & \checkmark \\
 \bottomrule
 \end{tabular}
 \vspace{0.3em}
- 
+
 \raggedright\footnotesize TF = \textit{training-free}; SA = koreksi \textit{sample-adaptive}; CG = \textit{confidence-gating} pada tingkat sampel; MS = evaluasi pada keragaman spesies/stadium parasit lokal.
 \end{table}
 
 \section{MASALAH PENELITIAN}
 \label{masalah}
-\textbf{RQ1}: Seberapa besar \textit{domain gap} antara model klasifikasi malaria berbasis ResNet-18 yang dilatih pada NIH/NLM dan domain target PlasmoID ketika diuji secara \textit{zero-shot}, serta bagaimana variasi \textit{domain gap} tersebut pada kondisi akuisisi dan spesies atau stadium parasit yang berbeda?
+\textbf{RQ1}: Seberapa besar \textit{domain gap} antara model klasifikasi malaria berbasis \nama{ResNet-18} yang dilatih pada \nama{NIH/NLM} dan domain target \nama{PlasmoID} ketika diuji secara \textit{zero-shot}, serta bagaimana variasi \textit{domain gap} tersebut pada kondisi akuisisi dan spesies atau stadium parasit yang berbeda?
 
-\textbf{RQ2}: Seberapa efektif SafeSteer sebagai metode adaptasi domain \textit{training-free} berbasis \textit{kernel} dan \textit{confidence-gating} dalam meningkatkan performa klasifikasi malaria pada domain PlasmoID dengan jumlah data target yang terbatas, dibandingkan dengan \textit{zero-shot}, kalibrasi \textit{threshold}, dan \textit{fine-tuning} bertahap?
+\textbf{RQ2}: Seberapa efektif \nama{SafeSteer} sebagai metode adaptasi domain \textit{training-free} berbasis \textit{kernel} dan \textit{confidence-gating} dalam meningkatkan performa klasifikasi malaria pada domain \nama{PlasmoID} dengan jumlah data target yang terbatas, dibandingkan dengan \textit{zero-shot}, kalibrasi \textit{threshold}, dan \textit{fine-tuning} bertahap?
 
 \section{TUJUAN PENELITIAN}
 \label{tujuan}
-Tujuan penelitian ini adalah mengembangkan dan mengevaluasi SafeSteer sebagai metode adaptasi domain \textit{training-free} untuk klasifikasi malaria pada domain target dengan data berlabel terbatas. Secara khusus, penelitian ini bertujuan untuk: (1) mengukur \textit{domain gap} antara NIH/NLM dan PlasmoID melalui evaluasi \textit{zero-shot} serta menganalisis variasinya berdasarkan kondisi akuisisi dan spesies atau stadium parasit; dan (2) mengevaluasi efektivitas SafeSteer dalam meningkatkan performa klasifikasi pada domain target dibandingkan \textit{zero-shot}, kalibrasi \textit{threshold}, dan \textit{fine-tuning} bertahap pada skenario 5, 10, dan 20 sampel per kelas, termasuk analisis kebutuhan jumlah sampel \textit{support}, konsistensi performa antar-subgroup, dan retensi performa pada domain sumber.
+Tujuan penelitian ini adalah mengembangkan dan mengevaluasi \nama{SafeSteer} sebagai metode adaptasi domain \textit{training-free} untuk klasifikasi malaria pada domain target dengan data berlabel terbatas. Secara khusus, penelitian ini bertujuan untuk: (1) mengukur \textit{domain gap} antara \nama{NIH/NLM} dan \nama{PlasmoID} melalui evaluasi \textit{zero-shot} serta menganalisis variasinya berdasarkan kondisi akuisisi dan spesies atau stadium parasit; dan (2) mengevaluasi efektivitas \nama{SafeSteer} dalam meningkatkan performa klasifikasi pada domain target dibandingkan \textit{zero-shot}, kalibrasi \textit{threshold}, dan \textit{fine-tuning} bertahap pada skenario 5, 10, dan 20 sampel per kelas, termasuk analisis kebutuhan jumlah sampel \textit{support}, konsistensi performa antar-subgroup, dan retensi performa pada domain sumber.
 
 \section{METODE YANG DIUSULKAN}
 
 \subsection{Desain dan Alur Penelitian}
 
-Gambar~\ref{fig:arsitektur} merangkum arsitektur dan alur adaptasi
-SafeSteer, mulai dari pembentukan model sumber hingga prediksi
+Gambar~\ref{fig:arsitektur} merangkum alur penelitian \nama{SafeSteer},
+mulai dari pembentukan model sumber hingga adaptasi dan prediksi
 pada domain target.
 
 \begin{figure*}[!t]
-    \centering
-    \includegraphics[
-        width=0.98\textwidth,
-        keepaspectratio
-    ]{figures/fig1.pdf}
-    \caption{Arsitektur dan alur adaptasi SafeSteer pada domain target
-PlasmoID. ResNet-18 dilatih pada domain sumber NIH/NLM, kemudian
-\textit{encoder} dan \textit{classification head} dibekukan untuk
-mengekstraksi fitur kueri dan \textit{few-shot support set}. KernelSteer
-menghasilkan koreksi fitur \textit{sample-adaptive} berdasarkan hubungan
-antara fitur kueri, \textit{support set}, dan rata-rata fitur kelas pada
-domain sumber, sedangkan VoteGate mengatur kekuatan koreksi berdasarkan
-kesepakatan lokal pada \textit{support set}. Fitur kueri yang telah
-dikoreksi diteruskan ke \textit{classification head} sumber untuk
-menghasilkan skor prediksi, sedangkan skor dan label \textit{support}
-digunakan untuk mengalibrasi ambang keputusan yang menentukan prediksi
-akhir.}
-    \label{fig:arsitektur}
+\centering
+\includegraphics[
+width=0.98\textwidth,
+keepaspectratio
+]{figures/figure1_safesteer-v1.pdf}
+\caption{Alur penelitian dan arsitektur \nama{SafeSteer}.}
+\label{fig:arsitektur}
 \end{figure*}
 
 Penelitian dilaksanakan dalam tujuh tahap berurutan:
-(1) pembentukan \textit{patch} sel tunggal dari NLM dan PlasmoID;
-(2) pelatihan model sumber ResNet-18 pada NLM;
+(1) pembentukan \textit{patch} sel tunggal dari \nama{NLM} dan \nama{PlasmoID};
+(2) pelatihan model sumber \nama{ResNet-18} pada \nama{NLM};
 (3) probe \textit{domain shift} yang bersifat
 \textit{stage-agnostic} untuk menjawab RQ1;
 (4) evaluasi \textit{zero-shot} model sumber pada tujuh subgrup
-PlasmoID;
-(5) penerapan SafeSteer (KernelSteer + VoteGate + kalibrasi
+\nama{PlasmoID};
+(5) penerapan \nama{SafeSteer} (\nama{KernelSteer} + \nama{VoteGate} + kalibrasi
 ambang berorientasi-\textit{recall}) pada skenario
 \textit{few-shot} dengan 1, 5, 10, 15, dan 20 sampel per kelas;
-(6) perbandingan dengan \textit{baseline} ThresholdCalib,
-ProtoNet, MMD-linear, dan \textit{fine-tuning} bertahap,
-termasuk varian teregularisasi L2-SP; serta
+(6) perbandingan dengan \textit{baseline} \nama{ThresholdCalib},
+\nama{ProtoNet}, \nama{MMD-linear}, dan \textit{fine-tuning} bertahap,
+termasuk varian teregularisasi \nama{L2-SP}; serta
 (7) pengukuran retensi domain sumber dan ketahanan terhadap
 kesalahan penerapan lintas-domain.
 
-Pada SafeSteer, bobot \textit{encoder} dan
+Pada \nama{SafeSteer}, bobot \textit{encoder} dan
 \textit{classification head} dari model sumber tetap dibekukan.
-Adaptasi domain target dilakukan melalui KernelSteer untuk
+Adaptasi domain target dilakukan melalui \nama{KernelSteer} untuk
 menghasilkan koreksi fitur yang bersifat
-\textit{sample-adaptive}, VoteGate untuk mengatur kekuatan
+\textit{sample-adaptive}, \nama{VoteGate} untuk mengatur kekuatan
 koreksi berdasarkan kesepakatan lokal pada \textit{support set},
 serta kalibrasi ambang berorientasi-\textit{recall}. Dengan
 demikian, seluruh proses adaptasi dilakukan tanpa memperbarui
 parameter model sumber.
 
 \subsection{Dataset dan Pembagian Data}
-Domain sumber menggunakan NIH/NLM \textit{Thin Blood Smear} \cite{b15} dan dibatasi pada \textit{P. falciparum}. Domain target menggunakan PlasmoID \cite{b22}, yang didefinisikan sebagai gabungan tujuh subgrup spesies/stadium \textit{viable}: FT (falciparum trofozoit -- kontrol, dengan spesies/stadium yang sama dengan domain sumber), FG (falciparum gametosit), FS (falciparum skizon), MT (malariae trofozoit), serta VG, VS, dan VT (vivax gametosit/skizon/trofozoit). Subgrup disebut \textit{viable} apabila memiliki sekurang-kurangnya satu sampel evaluasi terinfeksi pada \textit{fixed test set}; subgrup VG dikecualikan dari pelaporan performa karena tidak memiliki sampel positif pada \textit{fixed test set} (Tabel~\ref{tab:zeroshot}). PlasmoID digunakan sebagai representasi domain akuisisi lokal Indonesia yang mencakup keragaman spesies dalam dataset, bukan sebagai representasi tunggal \textit{falciparum}.
+Domain sumber menggunakan \nama{NIH/NLM} \textit{Thin Blood Smear} \cite{b15} dan dibatasi pada \textit{P. falciparum}. Domain target menggunakan \nama{PlasmoID} \cite{b22}, yang didefinisikan sebagai gabungan tujuh subgrup spesies/stadium \textit{viable}: FT (falciparum trofozoit -- kontrol, dengan spesies/stadium yang sama dengan domain sumber), FG (falciparum gametosit), FS (falciparum skizon), MT (malariae trofozoit), serta VG, VS, dan VT (vivax gametosit/skizon/trofozoit). Subgrup disebut \textit{viable} apabila memiliki sekurang-kurangnya satu sampel evaluasi terinfeksi pada \textit{fixed test set}; subgrup VG dikecualikan dari pelaporan performa karena tidak memiliki sampel positif pada \textit{fixed test set} (Tabel~\ref{tab:zeroshot}). \nama{PlasmoID} digunakan sebagai representasi domain akuisisi lokal Indonesia yang mencakup keragaman spesies dalam dataset, bukan sebagai representasi tunggal \textit{falciparum}.
 
-Pembagian \textit{train/validation/test} dilakukan pada tingkat pasien untuk NLM dan pada tingkat citra asal untuk PlasmoID sebelum pembentukan \textit{patch}. Dengan demikian, seluruh \textit{patch} dari satu pasien atau citra asal berada pada \textit{split} yang sama sehingga mencegah kebocoran data (\textit{data leakage}) antar-\textit{split}. Pada PlasmoID, \textit{split train} digunakan sebagai \textit{support pool}, sedangkan \textit{split validation} dan \textit{test} digabung menjadi \textit{fixed test set}. \textit{Fixed test set} digunakan secara identik pada seluruh skenario evaluasi dan tidak dijadikan sumber sampel kalibrasi. Dua istilah berikut dibedakan secara eksplisit pada bagian selanjutnya: \textit{support pool} merujuk pada seluruh 346 kandidat pada \textit{split train} PlasmoID, sedangkan \textit{support set} merujuk pada $N$ sampel per kelas yang dipilih dari \textit{support pool} tersebut pada satu \textit{seed} tertentu. Tabel~\ref{tab:dataset} merangkum karakteristik kedua dataset.
+Pembagian \textit{train/validation/test} dilakukan pada tingkat pasien untuk \nama{NLM} dan pada tingkat citra asal untuk \nama{PlasmoID} sebelum pembentukan \textit{patch}. Dengan demikian, seluruh \textit{patch} dari satu pasien atau citra asal berada pada \textit{split} yang sama sehingga mencegah kebocoran data (\textit{data leakage}) antar-\textit{split}. Pada \nama{PlasmoID}, \textit{split train} digunakan sebagai \textit{support pool}, sedangkan \textit{split validation} dan \textit{test} digabung menjadi \textit{fixed test set}. \textit{Fixed test set} digunakan secara identik pada seluruh skenario evaluasi dan tidak dijadikan sumber sampel kalibrasi. Dua istilah berikut dibedakan secara eksplisit pada bagian selanjutnya: \textit{support pool} merujuk pada seluruh 346 kandidat pada \textit{split train} \nama{PlasmoID}, sedangkan \textit{support set} merujuk pada $N$ sampel per kelas yang dipilih dari \textit{support pool} tersebut pada satu \textit{seed} tertentu. Tabel~\ref{tab:dataset} merangkum karakteristik kedua dataset.
 
 \begin{table}[h]
 \centering
@@ -188,12 +175,12 @@ Pembagian \textit{train/validation/test} dilakukan pada tingkat pasien untuk NLM
 \toprule
 Dataset & \textit{Split} & Terinfeksi & Sehat & Total \\
 \midrule
-NLM & \textit{Train} & 596 & 13.838 & 14.434 \\
-NLM & \textit{Val} & 68 & 3.885 & 3.953 \\
-NLM & \textit{Test} & 44 & 2.800 & 2.844 \\
+\nama{NLM} & \textit{Train} & 596 & 13.838 & 14.434 \\
+\nama{NLM} & \textit{Val} & 68 & 3.885 & 3.953 \\
+\nama{NLM} & \textit{Test} & 44 & 2.800 & 2.844 \\
 \midrule
-PlasmoID & \textit{Train} (\textit{support pool}) & 45 & 301 & 346 \\
-PlasmoID & \textit{Val}+\textit{Test} (\textit{fixed test set}) & 100 & 823 & 923 \\
+\nama{PlasmoID} & \textit{Train} (\textit{support pool}) & 45 & 301 & 346 \\
+\nama{PlasmoID} & \textit{Val}+\textit{Test} (\textit{fixed test set}) & 100 & 823 & 923 \\
 \bottomrule
 \end{tabular}}
 \end{table}
@@ -201,75 +188,66 @@ PlasmoID & \textit{Val}+\textit{Test} (\textit{fixed test set}) & 100 & 823 & 92
 Gambar~\ref{fig:sampeldataset} menampilkan satu contoh \textit{patch} sel terinfeksi dari domain sumber dan masing-masing dari tujuh subgrup domain target. Contoh tersebut memperlihatkan variasi visual pada morfologi parasit serta kondisi akuisisi antar-domain dan antar-subgrup.
 
 \begin{figure*}[!t]
-    \centering
-    \includegraphics[
-        width=\textwidth,
-        keepaspectratio
-    ]{figures/fig2.pdf}
-    \caption{Contoh \textit{patch} sel terinfeksi dari domain sumber NIH/NLM
-    dan tujuh subgrup domain target PlasmoID (FT, FG, FS, MT, VG, VS, dan VT),
-    yang memperlihatkan variasi morfologi parasit dan karakteristik visual
-    antar-domain dan antar-subgrup.}
-    \label{fig:sampeldataset}
+\centering
+\includegraphics[
+width=\textwidth,
+keepaspectratio
+]{figures/figure_patch_examples.pdf}
+\caption{Contoh \textit{patch} sel terinfeksi: domain sumber (\nama{NLM}) dan tujuh subgrup domain target (\nama{PlasmoID}).}
+\label{fig:sampeldataset}
 \end{figure*}
 
 \subsection{Pembentukan \textit{Patch} dan Preprocessing}
-Seluruh \textit{patch} berformat RGB dengan ukuran 224$\times$224 piksel. Untuk NLM, anotasi \textit{polygon} RBC digunakan untuk menentukan \textit{square crop} dengan faktor konteks tetap ($s=1{,}4\times\max(w,h)$ dari \textit{bounding box} RBC) sebelum dilakukan \textit{resize}. Untuk PlasmoID, \textit{mask} biner parasit digunakan untuk menentukan \textit{centroid} sebagai titik pusat \textit{crop}; \textit{crop} dibentuk pada skala yang setara dengan RBC referensi domain melalui \textit{Hough Circle Transform} ($\nama{cells\_in\_view}=5,0$). \textit{Mask}/\textit{edge} PlasmoID hanya digunakan untuk menentukan lokasi \textit{crop} dan tidak pernah digunakan sebagai masukan \textit{classifier}.
+Seluruh \textit{patch} berformat \nama{RGB} dengan ukuran 224$\times$224 piksel. Untuk \nama{NLM}, anotasi \textit{polygon} RBC digunakan untuk menentukan \textit{square crop} dengan faktor konteks tetap ($s=1{,}4\times\max(w,h)$ dari \textit{bounding box} RBC) sebelum dilakukan \textit{resize}. Untuk \nama{PlasmoID}, \textit{mask} biner parasit digunakan untuk menentukan \textit{centroid} sebagai titik pusat \textit{crop}; \textit{crop} dibentuk pada skala yang setara dengan RBC referensi domain melalui \textit{Hough Circle Transform} ($\nama{cells\_in\_view}=5,0$). \textit{Mask}/\textit{edge} \nama{PlasmoID} hanya digunakan untuk menentukan lokasi \textit{crop} dan tidak pernah digunakan sebagai masukan \textit{classifier}.
 
 Posisi objek anotasi di dalam jendela \textit{crop} diacak ($\nama{jitter\_frac}=0,35$, dengan margin aman 6 piksel dari tepi citra sumber asli) untuk mengurangi ketergantungan model terhadap posisi objek sebagai \textit{shortcut} klasifikasi.
 
 \subsection{Pelatihan Model Sumber}
-\textit{Backbone} yang digunakan adalah \nama{ResNet-18}~\cite{b23} dengan bobot \textit{pre-trained} \nama{ImageNet}. Seluruh model kemudian dilatih pada \textit{split train} NLM dengan input berukuran 224$\times$224. Pelatihan menggunakan optimizer AdamW ($\text{lr}=10^{-4}$, \textit{weight decay}=$10^{-4}$), fungsi \textit{loss cross-entropy}, \textit{batch size}=32, dan maksimum 30 \textit{epoch} dengan \textit{early stopping} (\textit{patience}=7). Mengingat ketimpangan kelas NLM yang tinggi (Tabel~\ref{tab:dataset}), \textit{checkpoint} terbaik dipilih berdasarkan \textit{balanced accuracy} pada \textit{split validation}. Representasi fitur yang digunakan oleh KernelSteer dan VoteGate merupakan keluaran lapisan \textit{global-average-pooling} berdimensi 512 sebelum \textit{classification head}. Setelah pelatihan selesai, seluruh bobot \textit{backbone} dan \textit{classification head} dibekukan dan tidak diperbarui pada tahap berikutnya.
+\textit{Backbone} yang digunakan adalah \nama{ResNet-18}~\cite{b23} dengan bobot \textit{pre-trained} \nama{ImageNet}. Seluruh model kemudian dilatih pada \textit{split train} \nama{NLM} dengan input berukuran 224$\times$224. Pelatihan menggunakan optimizer \nama{AdamW} ($\text{lr}=10^{-4}$, \textit{weight decay}=$10^{-4}$), fungsi \textit{loss cross-entropy}, \textit{batch size}=32, dan maksimum 30 \textit{epoch} dengan \textit{early stopping} (\textit{patience}=7). Mengingat ketimpangan kelas \nama{NLM} yang tinggi (Tabel~\ref{tab:dataset}), \textit{checkpoint} terbaik dipilih berdasarkan \textit{balanced accuracy} pada \textit{split validation}. Representasi fitur yang digunakan oleh \nama{KernelSteer} dan \nama{VoteGate} merupakan keluaran lapisan \textit{global-average-pooling} berdimensi 512 sebelum \textit{classification head}. Setelah pelatihan selesai, seluruh bobot \textit{backbone} dan \textit{classification head} dibekukan dan tidak diperbarui pada tahap berikutnya.
 
-\subsection{SafeSteer: KernelSteer dan VoteGate}
-Misalkan $\delta_c$ adalah vektor koreksi konstan untuk kelas $c$, dengan $f'(x)=f(x)+\alpha\delta_c$. Karena \textit{classification head} $W$ bersifat linear:
-\begin{equation*}
-\nama{logit}_c = \underbrace{[W_c\cdot f(x)+b_c]}_{\text{bergantung } x} + \underbrace{\alpha(W_c\cdot\delta_c)}_{\text{konstan terhadap } x} \, ,
-\label{eq:limitation}
-\end{equation*}
-dengan $\nama{logit}_c$ adalah \dots; $W_c$ adalah \dots; $f(x)$ merepresentasikan \dots; \dots; dan \dots \alfan{tolong tambahkan bagian ini}.
-%Suku koreksi pada Persamaan~\ref{eq:limitation} bersifat konstan terhadap $x$ dan setara dengan pergeseran \textit{bias} logit. 
-Oleh karena itu, koreksi tersebut tidak dapat mengubah kapasitas diskriminasi model (AUROC) untuk setiap nilai $\alpha$. Keterbatasan ini menunjukkan perlunya mekanisme koreksi yang bergantung pada posisi setiap sampel di ruang fitur, bukan satu vektor koreksi yang sama untuk seluruh sampel dalam suatu kelas.
+\subsection{\nama{SafeSteer}: \nama{KernelSteer} dan \nama{VoteGate}}
+Misalkan $\delta_c$ adalah vektor koreksi konstan untuk kelas $c$, dengan $f'(x)=f(x)+\alpha\delta_c$. Karena \textit{classification head} $W$ bersifat linear, logit kelas $c$ dapat dituliskan sebagai:
+\begin{equation}
+\text{logit}_c = \underbrace{[W_c\cdot f(x)+b_c]}_{\text{bergantung } x} + \underbrace{\alpha(W*c\cdot\delta_c)}*{\text{konstan terhadap } x} \, ,
+\tag{Batasan Vektor-Konstan}\label{eq:limitation}
+\end{equation}
+dengan $\text{logit}_c$ adalah skor mentah kelas $c$ sebelum diubah menjadi probabilitas; $W_c$ adalah vektor bobot \textit{classification head} (berdimensi 512, sama dengan dimensi fitur) untuk kelas $c$; $f(x)$ merepresentasikan vektor fitur (\textit{global-average-pooling}, 512-D) hasil \textit{encoder} dari $x$; $b_c$ adalah \textit{bias classification head} untuk kelas $c$; $\alpha$ adalah skala kekuatan koreksi; $\delta_c$ adalah vektor koreksi konstan untuk kelas $c$; dan $x$ adalah input (citra) yang diklasifikasikan. Suku koreksi pada Persamaan~\ref{eq:limitation} bersifat konstan terhadap $x$ dan setara dengan pergeseran \textit{bias} logit. Oleh karena itu, koreksi tersebut tidak dapat mengubah kapasitas diskriminasi model (\nama{AUROC}) untuk setiap nilai $\alpha$. Keterbatasan ini menunjukkan perlunya mekanisme koreksi yang bergantung pada posisi setiap sampel di ruang fitur, bukan satu vektor koreksi yang sama untuk seluruh sampel dalam suatu kelas.
 
 Notasi berikut digunakan pada bagian selanjutnya. Variabel $z$ menyatakan fitur kueri yang akan dikoreksi; $\{f_{\text{support}_i}, y_i\}_{i=1}^{S}$ menyatakan $S$ pasangan fitur dan label sampel \textit{support} yang diambil dari \textit{support pool} (Tabel~\ref{tab:dataset}); sedangkan $\bar{f}_{\text{source}}^{y_i}$ menyatakan rata-rata fitur domain sumber untuk kelas $y_i$.
 
-\myparagraph{KernelSteer} Koreksi dihitung sebagai kombinasi berbobot \textit{kernel} dari setiap sampel \textit{support}:
-\begin{align}
-\delta(z) &= \sum_{i=1}^{S} w_i(z)\left(\bar{f}_{\text{source}}^{\,y_i} - f_{\text{support}_i}\right) \label{eq:kernel}\\
-w_i(z) &= \frac{\exp(-\lVert z-f_{\text{support}_i}\rVert^2/\tau)}{\sum_j \exp(-\lVert z-f_{\text{support}_j}\rVert^2/\tau)} \label{eq:kernelweight}
-\end{align}
-dengan $\tau$ ditetapkan melalui \textit{median heuristic} \cite{b18}, yaitu median jarak kuadrat berpasangan antartitik \textit{support}, tanpa \textit{tuning} manual. Formulasi pada Persamaan~\ref{eq:kernel}--\ref{eq:kernelweight} terinspirasi dari kerangka \textit{kernel regression} berbobot jarak dan mekanisme atensi berbasis \textit{kernel} pada pembelajaran \textit{few-shot} \cite{b16,b17}. Dalam penelitian ini, formulasi tersebut digunakan untuk menghitung arah koreksi fitur untuk setiap kueri, bukan untuk klasifikasi langsung atau adaptasi model \textit{vision-language}. Bobot $w_i(z)$ menentukan kontribusi setiap sampel \textit{support} berdasarkan jaraknya terhadap kueri $z$, sehingga sampel yang lebih dekat memberikan kontribusi lebih besar. Karena bobot tersebut bergantung pada posisi kueri terhadap \textit{support set}, nilai $\delta(z)$ dapat berbeda untuk setiap kueri. Dengan demikian, koreksi yang dihasilkan bersifat \textit{sample-adaptive}, berbeda dari penggunaan satu vektor koreksi konstan untuk seluruh sampel.
-
-\myparagraph{VoteGate} Kekuatan penerapan $\delta(z)$ diatur berdasarkan sinyal kesepakatan kelas pada sampel \textit{support} yang paling relevan terhadap $z$:
+\myparagraph{\nama{KernelSteer}} Koreksi dihitung sebagai kombinasi berbobot \textit{kernel} dari setiap sampel \textit{support}:
 \begin{equation}
-\text{agree}(z) = \left\lvert\sum_{i=1}^{S} w_i(z)(2y_i-1)\right\rvert \in [0,1]
-\label{eq:votegate}
+\delta(z) = \sum*{i=1}^{S} w_i(z)\left(\bar{f}*{\text{source}}^{\,y*i} - f*{\text{support}_i}\right) \, ,
+\tag{\nama{KernelSteer}}\label{eq:kernel}
 \end{equation}
+dengan $\delta(z)$ adalah vektor arah dan besar koreksi untuk kueri $z$; $S$ adalah jumlah sampel \textit{support}; dan $w_i(z)$ adalah bobot \textit{kernel} sampel \textit{support} ke-$i$ terhadap $z$, dihitung sebagai:
 \begin{equation}
-\alpha_{\text{eff}}(z)=\alpha\cdot\text{agree}(z), \qquad f'(z)=z+\alpha_{\text{eff}}(z)\,\delta(z)
-\label{eq:votegateapply}
+w_i(z) = \frac{\exp(-\lVert z-f_{\text{support}_i}\rVert^2/\tau)}{\sum_j \exp(-\lVert z-f_{\text{support}_j}\rVert^2/\tau)} \, ,
+\tag{Bobot \nama{KernelSteer}}\label{eq:kernelweight}
 \end{equation}
-Nilai $w_i'(z)$ didefinisikan sama seperti Persamaan~\ref{eq:kernelweight}, tetapi menggunakan \textit{bandwidth} $\tau_{\text{agree}}$ yang lebih tajam -- jarak kuadrat minimum berpasangan antar dua sampel \textit{support} berbeda ($i\neq j$, sehingga jarak-diri tidak ikut dihitung) -- dibandingkan dengan \textit{bandwidth} $\tau$ pada Persamaan~\ref{eq:kernelweight}. Pada $\delta(z)$, \textit{bandwidth} yang lebih lebar digunakan untuk meratakan kontribusi lebih banyak titik \textit{support} dan mengurangi variansi arah koreksi. Sebaliknya, $\text{agree}(z)$ memerlukan informasi yang lebih lokal; \textit{bandwidth} yang terlalu lebar dapat menghasilkan bobot yang relatif seragam sehingga mengurangi sensitivitas terhadap kesepakatan lokal. Formulasi ini terinspirasi dari prinsip \textit{distance-weighted nearest-neighbor} \cite{b20} dan ukuran kepercayaan berbasis tetangga pada pembelajaran metrik \cite{b21}. Dalam penelitian ini, prinsip tersebut dikombinasikan dengan bobot \textit{kernel} KernelSteer untuk menghasilkan sinyal \textit{confidence-gating} terhadap koreksi fitur, bukan sebagai aturan klasifikasi \textit{k-NN} langsung. Fitur $f'(z)$ pada Persamaan~\ref{eq:votegateapply} kemudian diteruskan ke \textit{classification head} sumber yang tetap dibekukan untuk memperoleh prediksi akhir. Skala dasar $\alpha=1$ digunakan pada seluruh eksperimen tanpa proses \textit{tuning} tambahan; kekuatan koreksi akhir sepenuhnya diatur oleh $\text{agree}(z)\in[0,1]$ melalui Persamaan~\ref{eq:votegateapply}.
+dengan $\lVert z-f_{\text{support}\_i}\rVert^2$ adalah jarak kuadrat Euklides antara fitur kueri $z$ dan fitur sampel \textit{support} ke-$i$; dan $\tau$ adalah \textit{bandwidth kernel}, yang ditetapkan melalui \textit{median heuristic} \cite{b18} (median jarak kuadrat berpasangan antartitik \textit{support}, tanpa \textit{tuning} manual). Formulasi pada Persamaan \ref{eq:kernel} dan \ref{eq:kernelweight} terinspirasi dari kerangka \textit{kernel regression} berbobot jarak dan mekanisme atensi berbasis \textit{kernel} pada pembelajaran \textit{few-shot} \cite{b16,b17}. Dalam penelitian ini, formulasi tersebut digunakan untuk menghitung arah koreksi fitur untuk setiap kueri, bukan untuk klasifikasi langsung atau adaptasi model \textit{vision-language}. Bobot $w_i(z)$ menentukan kontribusi setiap sampel \textit{support} berdasarkan jaraknya terhadap kueri $z$, sehingga sampel yang lebih dekat memberikan kontribusi lebih besar. Karena bobot tersebut bergantung pada posisi kueri terhadap \textit{support set}, nilai $\delta(z)$ dapat berbeda untuk setiap kueri. Dengan demikian, koreksi yang dihasilkan bersifat \textit{sample-adaptive}, berbeda dari penggunaan satu vektor koreksi konstan untuk seluruh sampel.
 
-Secara ringkas, KernelSteer (Persamaan~\ref{eq:kernel}) menentukan arah koreksi, sedangkan VoteGate (Persamaan~\ref{eq:votegate}--\ref{eq:votegateapply}) mengatur kekuatan koreksi berdasarkan kesepakatan lokal. Keduanya bekerja pada representasi \textit{support} yang sama, tetapi menggunakan \textit{bandwidth} yang berbeda sesuai dengan perannya masing-masing.
+\myparagraph{\nama{VoteGate}} Kekuatan penerapan $\delta(z)$ diatur berdasarkan sinyal kesepakatan kelas pada sampel \textit{support} yang paling relevan terhadap $z$:
+\begin{equation}
+\text{agree}(z) = \left\lvert\sum*{i=1}^{S} w_i'(z)(2y_i-1)\right\rvert \in [0,1] \, ,
+\tag{\nama{VoteGate}}\label{eq:votegate}
+\end{equation}
+dengan $\text{agree}(z)$ adalah tingkat kesepakatan label pada sampel \textit{support} terdekat terhadap $z$ (skala 0--1); $y_i$ adalah label sampel \textit{support} ke-$i$ (0 untuk sehat, 1 untuk infeksi); dan $w_i'(z)$ adalah bobot \textit{kernel} sampel \textit{support} ke-$i$ terhadap $z$ dengan \textit{bandwidth} berbeda dari $w_i(z)$ pada Persamaan~\ref{eq:kernelweight} (dijelaskan lebih lanjut setelah Persamaan~\ref{eq:votegateapply}). Kekuatan koreksi efektif kemudian dihitung sebagai:
+\begin{equation}
+\alpha*{\text{eff}}(z)=\alpha\cdot\text{agree}(z) \, ,
+\tag{Kekuatan Efektif}\label{eq:alphaeff}
+\end{equation}
+dengan $\alpha_{\text{eff}}(z)$ adalah kekuatan koreksi efektif untuk kueri $z$. Fitur $z$ yang telah dikoreksi kemudian dihitung sebagai:
+\begin{equation}
+f'(z)=z+\alpha*{\text{eff}}(z)\,\delta(z) \, ,
+\tag{Fitur Terkoreksi}\label{eq:votegateapply}
+\end{equation}
+dengan $f'(z)$ adalah fitur kueri $z$ setelah dikoreksi. Nilai $w_i'(z)$ didefinisikan sama seperti pada Persamaan \ref{eq:kernelweight}, tetapi menggunakan \textit{bandwidth} $\tau*{\text{agree}}$ yang lebih tajam -- jarak kuadrat minimum berpasangan antar dua sampel \textit{support} berbeda ($i\neq j$, sehingga jarak-diri tidak ikut dihitung) -- dibandingkan dengan \textit{bandwidth} $\tau$ pada Persamaan~\ref{eq:kernelweight}. Pada $\delta(z)$, \textit{bandwidth} yang lebih lebar digunakan untuk meratakan kontribusi lebih banyak titik \textit{support} dan mengurangi variansi arah koreksi. Sebaliknya, $\text{agree}(z)$ memerlukan informasi yang lebih lokal; \textit{bandwidth} yang terlalu lebar dapat menghasilkan bobot yang relatif seragam sehingga mengurangi sensitivitas terhadap kesepakatan lokal. Formulasi ini terinspirasi dari prinsip \textit{distance-weighted nearest-neighbor} \cite{b20} dan ukuran kepercayaan berbasis tetangga pada pembelajaran metrik \cite{b21}. Dalam penelitian ini, prinsip tersebut dikombinasikan dengan bobot \textit{kernel} \nama{KernelSteer} untuk menghasilkan sinyal \textit{confidence-gating} terhadap koreksi fitur, bukan sebagai aturan klasifikasi \textit{k-NN} langsung. Fitur $f'(z)$ pada Persamaan~\ref{eq:votegateapply} kemudian diteruskan ke \textit{classification head} sumber yang tetap dibekukan untuk memperoleh prediksi akhir. Skala dasar $\alpha=1$ digunakan pada seluruh eksperimen tanpa proses \textit{tuning} tambahan; kekuatan koreksi akhir sepenuhnya diatur oleh $\text{agree}(z)\in[0,1]$ melalui Persamaan \ref{eq:alphaeff} dan \ref{eq:votegateapply}.
 
-Gambar~\ref{fig:konsepkernelsteer} mengilustrasikan perbedaan konseptual antara \textit{steering} vektor-konstan dan KernelSteer. Pada \textit{steering} vektor-konstan, seluruh sampel menerima pergeseran yang identik, sedangkan KernelSteer menghasilkan arah dan besar koreksi yang bergantung pada posisi kueri terhadap \textit{support set}.
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=\columnwidth]
-    {figures/fig3.pdf}
-   \caption{Ilustrasi konseptual \textit{steering} vektor-konstan dan
-    KernelSteer menggunakan data sintetis. (a) \textit{Steering}
-    vektor-konstan menerapkan vektor pergeseran yang sama pada setiap sampel.
-    (b) KernelSteer menghasilkan arah dan besar koreksi yang bergantung pada
-    posisi kueri relatif terhadap \textit{support set}.}
-    \label{fig:konsepkernelsteer}
-\end{figure}
-
+Secara ringkas, \nama{KernelSteer} (Persamaan \ref{eq:kernel}) menentukan arah koreksi, sedangkan \nama{VoteGate} (Persamaan \ref{eq:votegate} hingga \ref{eq:votegateapply}) mengatur kekuatan koreksi berdasarkan kesepakatan lokal. Keduanya bekerja pada representasi \textit{support} yang sama, tetapi menggunakan \textit{bandwidth} yang berbeda sesuai dengan perannya masing-masing.
 
 \subsection{Kalibrasi Ambang Berorientasi-\textit{Recall}}
-Kalibrasi ambang keputusan dilakukan secara terpisah dari mekanisme koreksi fitur. Dari kandidat ambang yang mencapai \textit{recall} $\geq$95\% pada skor \textit{support set} $N$-\textit{shot} yang sama dipakai untuk koreksi pada \textit{seed} tersebut (bukan seluruh \textit{support pool}) setelah KernelSteer+VoteGate diterapkan pada \textit{support set} itu sendiri, dipilih ambang dengan \textit{specificity} tertinggi. Ambang yang diperoleh kemudian ditetapkan dan diterapkan pada \textit{fixed test set}. Prosedur kalibrasi tidak mengubah $\delta(z)$ maupun $\alpha_{\text{eff}}(z)$, tetapi hanya menentukan titik operasi klasifikasi. Skor kalibrasi ini dihitung tanpa skema \textit{leave-one-out}, sehingga tiap sampel \textit{support} turut menjadi tetangganya sendiri (jarak nol, bobot maksimal) saat menghitung skornya sendiri -- berpotensi membuat skor kalibrasi sedikit lebih optimistis dibanding performa pada sampel yang benar-benar baru. Ambang yang dihasilkan tetap diuji secara independen pada \textit{fixed test set} yang tidak pernah dipakai untuk menentukan ambang, sehingga metrik performa utama yang dilaporkan tidak terpengaruh; bias ini hanya berpotensi memengaruhi presisi pemilihan titik ambang itu sendiri.
+Kalibrasi ambang keputusan dilakukan secara terpisah dari mekanisme koreksi fitur. Dari kandidat ambang yang mencapai \textit{recall} $\geq$95\% pada skor \textit{support set} $N$-\textit{shot} yang sama dipakai untuk koreksi pada \textit{seed} tersebut (bukan seluruh \textit{support pool}) setelah \nama{KernelSteer}+\nama{VoteGate} diterapkan pada \textit{support set} itu sendiri, dipilih ambang dengan \textit{specificity} tertinggi. Ambang yang diperoleh kemudian ditetapkan dan diterapkan pada \textit{fixed test set}. Prosedur kalibrasi tidak mengubah $\delta(z)$ maupun $\alpha_{\text{eff}}(z)$, tetapi hanya menentukan titik operasi klasifikasi. Skor kalibrasi ini dihitung tanpa skema \textit{leave-one-out}, sehingga tiap sampel \textit{support} turut menjadi tetangganya sendiri (jarak nol, bobot maksimal) saat menghitung skornya sendiri -- berpotensi membuat skor kalibrasi sedikit lebih optimistis dibanding performa pada sampel yang benar-benar baru. Ambang yang dihasilkan tetap diuji secara independen pada \textit{fixed test set} yang tidak pernah dipakai untuk menentukan ambang, sehingga metrik performa utama yang dilaporkan tidak terpengaruh; bias ini hanya berpotensi memengaruhi presisi pemilihan titik ambang itu sendiri.
 
 \subsection{\textit{Baseline} Pembanding}
 Tabel~\ref{tab:baseline} merangkum seluruh metode yang dibandingkan.
@@ -284,75 +262,75 @@ Tabel~\ref{tab:baseline} merangkum seluruh metode yang dibandingkan.
 Metode & Pembaruan Bobot & Prinsip Kerja \\
 \midrule
 ZeroShot & Tidak & Model sumber diterapkan langsung \\
-ThresholdCalib & Tidak & Kalibrasi ambang 1-D dari skor \textit{zero-shot} \\
-ProtoNet \cite{b24} & Tidak & \textit{Nearest-centroid} pada fitur \textit{support} \\
-MMD-linear \cite{b14} & Tidak & Translasi fitur oleh selisih rata-rata \textit{pool} \\
+\nama{ThresholdCalib} & Tidak & Kalibrasi ambang 1-D dari skor \textit{zero-shot} \\
+\nama{ProtoNet} \cite{b24} & Tidak & \textit{Nearest-centroid} pada fitur \textit{support} \\
+\nama{MMD-linear} \cite{b14} & Tidak & Translasi fitur oleh selisih rata-rata \textit{pool} \\
 \textit{Fine-tuning} & Ya & Melatih \textit{head}, lalu membuka \texttt{layer4} \\
-SafeSteer & Tidak & KernelSteer + VoteGate + kalibrasi ambang \\
+\nama{SafeSteer} & Tidak & \nama{KernelSteer} + \nama{VoteGate} + kalibrasi ambang \\
 \bottomrule
 \end{tabular}}
 \end{table}
 
-MMD-linear mentranslasikan fitur target menggunakan $\bar{f}_{\text{source,pool}}-\bar{f}_{\text{target,pool}}$, dengan $\bar{f}_{\text{target,pool}}$ dihitung dari seluruh \textit{support pool} PlasmoID (\textit{split train}, 346 sampel) tanpa memanfaatkan label kelasnya -- bukan dari \textit{fixed test set} -- sehingga skema evaluasi tetap induktif seperti metode lain yang diuji, sebagai kasus linear dari kerangka RKHS-MMD \cite{b14}. \textit{Fine-tuning} bertahap dilakukan dalam dua tahap. Tahap pertama melatih \textit{classification head} dengan \textit{backbone} dibekukan selama 50 \textit{epoch} ($\text{lr}=10^{-3}$). Tahap kedua membuka \texttt{layer4} dan melatihnya selama 30 \textit{epoch} ($\text{lr}_{\text{backbone}}=10^{-5}$, $\text{lr}_{\text{classifier}}=10^{-4}$). Sebagai uji ketahanan tambahan, digunakan pula varian \textit{fine-tuning} dengan regularisasi \textbf{L2-SP} \cite{b25} pada tahap kedua. Regularisasi ini menerapkan penalti $\lambda\lVert\theta_{\text{layer4}}-\theta_{\text{layer4}}^{\text{source}}\rVert^2$ ($\lambda=0{,}01$) untuk membatasi penyimpangan bobot \texttt{layer4} dari titik awal model sumber. Seluruh \textit{baseline} selain \textit{fine-tuning} bersifat \textit{training-free}.
+\nama{MMD-linear} mentranslasikan fitur target menggunakan $\bar{f}_{\text{source,pool}}-\bar{f}_{\text{target,pool}}$, dengan $\bar{f}_{\text{target,pool}}$ dihitung dari seluruh \textit{support pool} \nama{PlasmoID} (\textit{split train}, 346 sampel) tanpa memanfaatkan label kelasnya -- bukan dari \textit{fixed test set} -- sehingga skema evaluasi tetap induktif seperti metode lain yang diuji, sebagai kasus linear dari kerangka \nama{RKHS-MMD} \cite{b14}. \textit{Fine-tuning} bertahap dilakukan dalam dua tahap. Tahap pertama melatih \textit{classification head} dengan \textit{backbone} dibekukan selama 50 \textit{epoch} ($\text{lr}=10^{-3}$). Tahap kedua membuka \texttt{layer4} dan melatihnya selama 30 \textit{epoch} ($\text{lr}_{\text{backbone}}=10^{-5}$, $\text{lr}_{\text{classifier}}=10^{-4}$). Sebagai uji ketahanan tambahan, digunakan pula varian \textit{fine-tuning} dengan regularisasi \textbf{\nama{L2-SP}} \cite{b25} pada tahap kedua. Regularisasi ini menerapkan penalti $\lambda\lVert\theta_{\text{layer4}}-\theta_{\text{layer4}}^{\text{source}}\rVert^2$ ($\lambda=0{,}01$) untuk membatasi penyimpangan bobot \texttt{layer4} dari titik awal model sumber. Seluruh \textit{baseline} selain \textit{fine-tuning} bersifat \textit{training-free}.
 
 \subsection{Protokol Evaluasi dan Analisis Statistik}
 Setiap skenario $N$-\textit{shot} ($N\in\{1,5,10,15,20\}$) diulang sebanyak 20 kali dengan \textit{seed} pengambilan \textit{support} yang berbeda, sedangkan \textit{fixed test set} dipertahankan identik pada seluruh pengulangan. Hasil dari 20 pengulangan digunakan untuk menghitung rata-rata dan variansi antar-\textit{seed}. Evaluasi dilakukan pada tingkat POOLED, yaitu seluruh \textit{fixed test set}, dan pada setiap subgrup (tujuh stratum). Signifikansi statistik diuji menggunakan \textit{one-sample t-test} terhadap perubahan ($\Delta$) \textit{balanced accuracy} dibandingkan dengan \textit{zero-shot}. Pada \textit{shot} tinggi (15--20), \textit{support set} antar-\textit{seed} berpotensi saling tumpang tindih karena \textit{support pool} yang tersedia terbatas (45 sampel positif), sehingga variansi antar-\textit{seed} yang dilaporkan dapat meremehkan ketidakpastian sesungguhnya. Uji signifikansi dilaporkan tanpa koreksi \textit{multiple comparisons}; ambang $p<0{,}0001$ yang dipakai pada klaim utama dipilih jauh lebih ketat dari 0,05 sebagai mitigasi parsial.
 
-\textit{Balanced accuracy} digunakan sebagai metrik utama karena memberikan bobot yang seimbang terhadap performa tiap kelas dan lebih sesuai untuk kondisi ketimpangan kelas. \textit{Recall} dilaporkan sebagai indikator sensitivitas dalam konteks skrining klinis, sedangkan AUROC digunakan untuk mengukur kapasitas diskriminasi tanpa bergantung pada satu titik potong. \textit{Precision}, \textit{specificity}, dan F1 dilaporkan sebagai metrik pendukung.
+\textit{Balanced accuracy} digunakan sebagai metrik utama karena memberikan bobot yang seimbang terhadap performa tiap kelas dan lebih sesuai untuk kondisi ketimpangan kelas. \textit{Recall} dilaporkan sebagai indikator sensitivitas dalam konteks skrining klinis, sedangkan \nama{AUROC} digunakan untuk mengukur kapasitas diskriminasi tanpa bergantung pada satu titik potong. \textit{Precision}, \textit{specificity}, dan F1 dilaporkan sebagai metrik pendukung.
 
-Retensi domain sumber diukur dengan mengevaluasi ulang \textit{checkpoint} model sumber -- dengan konfigurasi adaptasi SafeSteer diterapkan pada saat inferensi, tanpa pembaruan bobot apa pun -- pada \textit{split test} NLM. Evaluasi juga mencakup skenario ketahanan, yaitu koreksi yang dihitung untuk PlasmoID diterapkan secara keliru pada citra NLM. \textit{Domain gap} yang diukur tanpa \textit{confound} spesies/stadium parasit dianalisis menggunakan \textit{classifier} domain berupa regresi logistik dengan \textit{5-fold cross-validation}. \textit{Classifier} tersebut dilatih hanya pada kelas tidak terinfeksi dari kedua domain, kemudian diuji lebih lanjut menggunakan \textit{permutation test} dengan 1.000 permutasi label domain. \textit{Classifier} domain menerima representasi fitur \textit{global-average-pooling} 512-D yang sama dengan yang dipakai KernelSteer dan VoteGate; pembagian 5-\textit{fold} dilakukan secara acak dan terstratifikasi terhadap label domain (\textit{StratifiedKFold}).
+Retensi domain sumber diukur dengan mengevaluasi ulang \textit{checkpoint} model sumber -- dengan konfigurasi adaptasi \nama{SafeSteer} diterapkan pada saat inferensi, tanpa pembaruan bobot apa pun -- pada \textit{split test} \nama{NLM}. Evaluasi juga mencakup skenario ketahanan, yaitu koreksi yang dihitung untuk \nama{PlasmoID} diterapkan secara keliru pada citra \nama{NLM}. \textit{Domain gap} yang diukur tanpa \textit{confound} spesies/stadium parasit dianalisis menggunakan \textit{classifier} domain berupa regresi logistik dengan \textit{5-fold cross-validation}. \textit{Classifier} tersebut dilatih hanya pada kelas tidak terinfeksi dari kedua domain, kemudian diuji lebih lanjut menggunakan \textit{permutation test} dengan 1.000 permutasi label domain. \textit{Classifier} domain menerima representasi fitur \textit{global-average-pooling} 512-D yang sama dengan yang dipakai \nama{KernelSteer} dan \nama{VoteGate}; pembagian 5-\textit{fold} dilakukan secara acak dan terstratifikasi terhadap label domain (\textit{\nama{StratifiedKFold}}).
 
 \section{HASIL DAN PEMBAHASAN}
 
 \subsection{Hasil Pembentukan Data dan Model Sumber}
-Tabel~\ref{tab:sourcemodel} menunjukkan performa model sumber ResNet-18 pada \textit{split test} NLM.
+Tabel~\ref{tab:sourcemodel} menunjukkan performa model sumber \nama{ResNet-18} pada \textit{split test} \nama{NLM}.
 
 \begin{table}[h]
 \centering
-\caption{Performa Model Sumber ResNet-18 pada NLM \textit{Test}}
+\caption{Performa Model Sumber \nama{ResNet-18} pada \nama{NLM} \textit{Test}}
 \label{tab:sourcemodel}
 \resizebox{\columnwidth}{!}{
 \begin{tabular}{lrrrrr}
 \toprule
-Accuracy & BalAcc & Precision & Recall & Specificity & AUROC \\
+Accuracy & BalAcc & Precision & Recall & Specificity & \nama{AUROC} \\
 \midrule
 0,978 & 0,832 & 0,375 & 0,682 & 0,982 & 0,934 \\
 \bottomrule
 \end{tabular}}
 \end{table}
 
-Pada rasio ketimpangan kelas NLM sekitar 1:23, \textit{checkpoint} terpilih tetap menghasilkan \textit{recall}=0,682 pada kelas terinfeksi. Hasil ini konsisten dengan penggunaan \textit{balanced accuracy} sebagai kriteria pemilihan \textit{checkpoint} pada Bagian IV-D. Nilai \textit{precision} sebesar 0,375 diinterpretasikan bersama prevalensi kelas terinfeksi yang rendah pada \textit{split test} NLM (Tabel~\ref{tab:dataset}).
+Pada rasio ketimpangan kelas \nama{NLM} sekitar 1:23, \textit{checkpoint} terpilih tetap menghasilkan \textit{recall}=0,682 pada kelas terinfeksi. Hasil ini konsisten dengan penggunaan \textit{balanced accuracy} sebagai kriteria pemilihan \textit{checkpoint} pada Bagian IV-D. Nilai \textit{precision} sebesar 0,375 diinterpretasikan bersama prevalensi kelas terinfeksi yang rendah pada \textit{split test} \nama{NLM} (Tabel~\ref{tab:dataset}).
 
 \subsection{Evaluasi \textit{Zero-Shot} dan \textit{Domain Gap} (RQ1)}
-\textit{Classifier} domain dilatih hanya pada sel tidak terinfeksi sehingga analisis tidak melibatkan perbedaan spesies/stadium parasit. \textit{Classifier} tersebut mencapai AUROC=1,0000 dan \textit{balanced accuracy}=0,9996 dengan $p=0{,}001$ pada \textit{permutation test} (0 dari 1.000 permutasi menyamai AUROC asli). Hasil ini menunjukkan bahwa perbedaan antara domain NLM dan PlasmoID tetap terdeteksi setelah faktor spesies/stadium parasit dikeluarkan dari analisis.
+\textit{Classifier} domain dilatih hanya pada sel tidak terinfeksi sehingga analisis tidak melibatkan perbedaan spesies/stadium parasit. \textit{Classifier} tersebut mencapai \nama{AUROC}=1,0000 dan \textit{balanced accuracy}=0,9996 dengan $p=0{,}001$ pada \textit{permutation test} (0 dari 1.000 permutasi menyamai \nama{AUROC} asli). Hasil ini menunjukkan bahwa perbedaan antara domain \nama{NLM} dan \nama{PlasmoID} tetap terdeteksi setelah faktor spesies/stadium parasit dikeluarkan dari analisis.
 
-Tabel~\ref{tab:sourcevstarget} membandingkan performa model sumber pada domain asal (NLM) dan performa \textit{zero-shot}-nya pada domain target (PlasmoID, POOLED).
+Tabel~\ref{tab:sourcevstarget} membandingkan performa model sumber pada domain asal (\nama{NLM}) dan performa \textit{zero-shot}-nya pada domain target (\nama{PlasmoID}, POOLED).
 
 \begin{table}[h]
 \centering
-\caption{Performa NLM \textit{Test} vs. PlasmoID \textit{Zero-Shot} (POOLED)}
+\caption{Performa \nama{NLM} \textit{Test} vs. \nama{PlasmoID} \textit{Zero-Shot} (POOLED)}
 \label{tab:sourcevstarget}
 \resizebox{\columnwidth}{!}{
 \begin{tabular}{lrrr}
 \toprule
-Domain & BalAcc & Recall & AUROC \\
+Domain & BalAcc & Recall & \nama{AUROC} \\
 \midrule
-NLM (\textit{test}) & 0,832 & 0,682 & 0,934 \\
-PlasmoID (\textit{zero-shot}) & 0,713 & 0,460 & 0,911 \\
+\nama{NLM} (\textit{test}) & 0,832 & 0,682 & 0,934 \\
+\nama{PlasmoID} (\textit{zero-shot}) & 0,713 & 0,460 & 0,911 \\
 \bottomrule
 \end{tabular}}
 \end{table}
 
-Tabel~\ref{tab:zeroshot} merinci performa \textit{zero-shot} per subgrup ($n=923$). FT, yang memiliki spesies/stadium sama dengan domain sumber, menunjukkan AUROC 0,997 sehingga kapasitas diskriminasi model tetap sangat tinggi pada subgrup tersebut. MT, VS, dan VT menunjukkan AUROC yang relatif tinggi (0,88--0,96), tetapi memiliki \textit{recall} rendah pada ambang baku. Dalam penelitian ini, pola tersebut disebut \textbf{\textit{gap} tipe-kalibrasi}, yaitu ketika kapasitas diskriminasi masih memadai tetapi titik potong keputusan kurang sesuai. Sebaliknya, FG menunjukkan AUROC yang lebih rendah (0,859), yang disebut \textbf{\textit{gap} tipe-diskriminatif} karena penurunan terjadi pada kapasitas pembeda model. Temuan ini menunjukkan bahwa ketidaksesuaian domain tidak seluruhnya dapat dijelaskan oleh pergeseran \textit{threshold}, sehingga koreksi pada level fitur tetap perlu dievaluasi.
+Tabel~\ref{tab:zeroshot} merinci performa \textit{zero-shot} per subgrup ($n=923$). FT, yang memiliki spesies/stadium sama dengan domain sumber, menunjukkan \nama{AUROC} 0,997 sehingga kapasitas diskriminasi model tetap sangat tinggi pada subgrup tersebut. MT, VS, dan VT menunjukkan \nama{AUROC} yang relatif tinggi (0,88--0,96), tetapi memiliki \textit{recall} rendah pada ambang baku. Dalam penelitian ini, pola tersebut disebut \textbf{\textit{gap} tipe-kalibrasi}, yaitu ketika kapasitas diskriminasi masih memadai tetapi titik potong keputusan kurang sesuai. Sebaliknya, FG menunjukkan \nama{AUROC} yang lebih rendah (0,859), yang disebut \textbf{\textit{gap} tipe-diskriminatif} karena penurunan terjadi pada kapasitas pembeda model. Temuan ini menunjukkan bahwa ketidaksesuaian domain tidak seluruhnya dapat dijelaskan oleh pergeseran \textit{threshold}, sehingga koreksi pada level fitur tetap perlu dievaluasi.
 
 \begin{table}[h]
 \centering
-\caption{Performa \textit{Zero-Shot} per Subgrup, PlasmoID ($n=923$)}
+\caption{Performa \textit{Zero-Shot} per Subgrup, \nama{PlasmoID} ($n=923$)}
 \label{tab:zeroshot}
 \resizebox{\columnwidth}{!}{
 \begin{tabular}{lrrrrr}
 \toprule
-Stratum & $n$ & BalAcc & Precision & Recall & AUROC \\
+Stratum & $n$ & BalAcc & Precision & Recall & \nama{AUROC} \\
 \midrule
 POOLED & 923 & 0,713 & 0,622 & 0,460 & 0,911 \\
 FT & 59 & 0,731 & 1,000 & 0,462 & 0,997 \\
@@ -368,30 +346,31 @@ FS\textsuperscript{a} & 25 & 0,818 & 1,000 & 0,636 & 1,000 \\
 \end{flushleft}
 \end{table}
 
-\subsection{Analisis Komponen SafeSteer}
-Tabel~\ref{tab:ablation} menunjukkan kontribusi tiap komponen SafeSteer pada evaluasi POOLED 15-\textit{shot}. Penggunaan jumlah \textit{shot} yang sama pada seluruh varian memungkinkan perubahan antarkomponen dibandingkan pada kondisi data yang sama.
+\subsection{Analisis Komponen \nama{SafeSteer}}
+Tabel~\ref{tab:ablation} menunjukkan kontribusi tiap komponen \nama{SafeSteer} pada evaluasi POOLED 15-\textit{shot}. Penggunaan jumlah \textit{shot} yang sama pada seluruh varian memungkinkan perubahan antarkomponen dibandingkan pada kondisi data yang sama.
 
 \begin{table}[h]
 \centering
-\caption{Studi Ablasi Komponen SafeSteer (15-\textit{shot})}
+\caption{Studi Ablasi Komponen \nama{SafeSteer} (15-\textit{shot})}
 \label{tab:ablation}
 \resizebox{\columnwidth}{!}{
 \begin{tabular}{lrrrr}
 \toprule
-Varian & BalAcc & Recall & AUROC & Spearman vs.\ ZS \\
+Varian & BalAcc & Recall & \nama{AUROC} & Spearman vs.\ ZS \\
 \midrule
 \textit{Steering} vektor-konstan & 0,751 & 0,553 & 0,911 & 1,000000 \\
-KernelSteer (tanpa \textit{gate}) & 0,804 & 0,682 & 0,919 & turun s.d.\ 0,560 \\
-+ VoteGate & 0,777 & 0,611 & 0,915 & turun s.d.\ 0,917 \\
-+ Kalibrasi \textit{recall} (\textbf{SafeSteer}\textsuperscript{a}) & \textbf{0,831} & \textbf{0,861} & 0,915 & -- \\
-\bottomrule
-\end{tabular}}
-\begin{flushleft}
-\footnotesize\textsuperscript{a}15-\textit{shot} diterapkan seragam di seluruh baris agar perubahan antarkomponen tidak tercampur dengan efek jumlah data. Konfigurasi final SafeSteer pada Tabel~\ref{tab:master} menggunakan 20-\textit{shot}, yang memiliki variansi antar-\textit{seed} lebih rendah pada evaluasi jumlah \textit{shot} (Bagian V-E). Oleh karena itu, perbedaan angka SafeSteer pada kedua tabel mencerminkan tujuan analisis yang berbeda.
-\end{flushleft}
-\end{table}
+\nama{KernelSteer} (tanpa \textit{gate}) & 0,804 & 0,682 & 0,919 & turun s.d.\ 0,560 \\
 
-Baris pertama konsisten dengan Persamaan~\ref{eq:limitation}: Spearman(\textit{zero-shot}, \textit{steering} vektor-konstan) = 1,000000 pada 540 kombinasi evaluasi, sehingga peringkat skor tidak berubah. Pada KernelSteer, korelasi Spearman turun hingga 0,560 pada kombinasi tertentu dan AUROC meningkat di atas \textit{zero-shot}. Hasil ini menunjukkan bahwa koreksi yang bergantung pada kueri dapat mengubah peringkat skor, berbeda dari pergeseran \textit{threshold} yang tidak mengubah urutan skor.
+- \nama{VoteGate} & 0,777 & 0,611 & 0,915 & turun s.d.\ 0,917 \\
+- Kalibrasi \textit{recall} (\textbf{\nama{SafeSteer}}\textsuperscript{a}) & \textbf{0,831} & \textbf{0,861} & 0,915 & -- \\
+  \bottomrule
+  \end{tabular}}
+  \begin{flushleft}
+  \footnotesize\textsuperscript{a}15-\textit{shot} diterapkan seragam di seluruh baris agar perubahan antarkomponen tidak tercampur dengan efek jumlah data. Konfigurasi final \nama{SafeSteer} pada Tabel~\ref{tab:master} menggunakan 20-\textit{shot}, yang memiliki variansi antar-\textit{seed} lebih rendah pada evaluasi jumlah \textit{shot} (Bagian V-E). Oleh karena itu, perbedaan angka \nama{SafeSteer} pada kedua tabel mencerminkan tujuan analisis yang berbeda.
+  \end{flushleft}
+  \end{table}
+
+Baris pertama konsisten dengan Persamaan~\ref{eq:limitation}: Spearman(\textit{zero-shot}, \textit{steering} vektor-konstan) = 1,000000 pada 540 kombinasi evaluasi, sehingga peringkat skor tidak berubah. Pada \nama{KernelSteer}, korelasi Spearman turun hingga 0,560 pada kombinasi tertentu dan \nama{AUROC} meningkat di atas \textit{zero-shot}. Hasil ini menunjukkan bahwa koreksi yang bergantung pada kueri dapat mengubah peringkat skor, berbeda dari pergeseran \textit{threshold} yang tidak mengubah urutan skor.
 
 Tabel~\ref{tab:gating} membandingkan tiga sinyal \textit{confidence-gating} yang diuji. Hasil dilaporkan sebagai persentase kombinasi stratum$\times$\textit{shot} yang mencapai signifikansi statistik ($p<0{,}05$, $\Delta$BalAcc$>0$) terhadap \textit{zero-shot}.
 
@@ -404,9 +383,9 @@ Tabel~\ref{tab:gating} membandingkan tiga sinyal \textit{confidence-gating} yang
 \toprule
 Sinyal \textit{Gating} & \% Kombinasi Signifikan & Rata-rata $\Delta$BalAcc \\
 \midrule
-EntropyGate & 71,9\% (23/32) & $+$0,060 \\
-ConcGate & 60,0\% (18/30) & $+$0,025 \\
-\textbf{VoteGate} & \textbf{84,4\% (27/32)} & $+$0,048 \\
+\nama{EntropyGate} & 71,9\% (23/32) & $+$0,060 \\
+\nama{ConcGate} & 60,0\% (18/30) & $+$0,025 \\
+\textbf{\nama{VoteGate}} & \textbf{84,4\% (27/32)} & $+$0,048 \\
 \bottomrule
 \end{tabular}}
 \begin{flushleft}
@@ -414,72 +393,93 @@ ConcGate & 60,0\% (18/30) & $+$0,025 \\
 \end{flushleft}
 \end{table}
 
-Pada evaluasi POOLED 15-\textit{shot} di Tabel~\ref{tab:ablation}, penambahan VoteGate setelah KernelSteer menurunkan BalAcc dari 0,804 menjadi 0,777, sehingga VoteGate tidak memaksimalkan metrik POOLED pada setiap konfigurasi. Namun, pada evaluasi lintas kombinasi di Tabel~\ref{tab:gating}, VoteGate mencapai persentase kombinasi signifikan tertinggi. Hasil ini menunjukkan bahwa pemilihan VoteGate lebih berkaitan dengan konsistensi perbaikan lintas kombinasi daripada dengan nilai rata-rata tertinggi pada satu konfigurasi. ConcGate, yang mengukur konsentrasi bobot \textit{kernel} menggunakan \textit{bandwidth} yang sama dengan Persamaan~\ref{eq:kernelweight}, menghasilkan $\text{agree}\approx0{,}06$ rata-rata pada evaluasi awal. Nilai tersebut menunjukkan sinyal kesepakatan yang lemah dan mendukung penggunaan \textit{bandwidth} terpisah untuk VoteGate sebagaimana dijelaskan pada Bagian IV-E.
+Pada evaluasi POOLED 15-\textit{shot} di Tabel~\ref{tab:ablation}, penambahan \nama{VoteGate} setelah \nama{KernelSteer} menurunkan BalAcc dari 0,804 menjadi 0,777, sehingga \nama{VoteGate} tidak memaksimalkan metrik POOLED pada setiap konfigurasi. Namun, pada evaluasi lintas kombinasi di Tabel~\ref{tab:gating}, \nama{VoteGate} mencapai persentase kombinasi signifikan tertinggi. Hasil ini menunjukkan bahwa pemilihan \nama{VoteGate} lebih berkaitan dengan konsistensi perbaikan lintas kombinasi daripada dengan nilai rata-rata tertinggi pada satu konfigurasi. \nama{ConcGate}, yang mengukur konsentrasi bobot \textit{kernel} menggunakan \textit{bandwidth} yang sama dengan Persamaan~\ref{eq:kernelweight}, menghasilkan $\text{agree}\approx0{,}06$ rata-rata pada evaluasi awal. Nilai tersebut menunjukkan sinyal kesepakatan yang lemah dan mendukung penggunaan \textit{bandwidth} terpisah untuk \nama{VoteGate} sebagaimana dijelaskan pada Bagian IV-E.
 
 Target kalibrasi \textit{recall} 90\%, 95\%, dan 98\% diuji secara terpisah. Pada kalibrasi 15--20-\textit{shot}, target 95\% dan 98\% menghasilkan \textit{recall} yang sama pada \textit{fixed test set} POOLED, sekitar 0,86. Dengan demikian, peningkatan target dari 95\% menjadi 98\% tidak memberikan peningkatan \textit{recall} pada \textit{fixed test set} untuk konfigurasi yang diuji. Target 95\% dipilih sebagai konfigurasi final berdasarkan hasil konvergensi tersebut. Nilai ambang pada tiap target tetap dihitung murni dari skor \textit{support set} tanpa melibatkan label \textit{fixed test set}; namun, pemilihan target 95\% sebagai konfigurasi final di antara kandidat 90/95/98\% didasarkan pada pola konvergensi yang teramati pada evaluasi ini, sehingga keputusan tersebut bukan sepenuhnya independen dari \textit{fixed test set}.
 
-\subsection{Perbandingan SafeSteer dengan \textit{Baseline} (RQ2)}
-Tabel~\ref{tab:master} membandingkan SafeSteer (KernelSteer+VoteGate+kalibrasi \textit{recall} 95\%, 20-\textit{shot}) terhadap seluruh \textit{baseline} pada evaluasi POOLED.
+\subsection{Perbandingan \nama{SafeSteer} dengan \textit{Baseline} (RQ2)}
+Tabel~\ref{tab:master} membandingkan \nama{SafeSteer} (\nama{KernelSteer}+\nama{VoteGate}+kalibrasi \textit{recall} 95\%, 20-\textit{shot}) terhadap seluruh \textit{baseline} pada evaluasi POOLED.
 
 \begin{table}[h]
 \centering
-\caption{Perbandingan Metode pada PlasmoID (POOLED)}
+\caption{Perbandingan Metode pada \nama{PlasmoID} (POOLED)}
 \label{tab:master}
 \resizebox{\columnwidth}{!}{
 \begin{tabular}{lrrrrr}
 \toprule
-Metode & BalAcc & Precision & Recall & F1 & AUROC \\
+Metode & BalAcc & Precision & Recall & F1 & \nama{AUROC} \\
 \midrule
 ZeroShot & 0,713 & 0,622 & 0,460 & 0,529 & 0,911 \\
-ThresholdCalib & 0,835 & 0,378 & 0,848 & 0,518 & 0,911 \\
-ProtoNet & 0,809 & 0,489 & 0,710 & 0,576 & 0,919 \\
-MMD-linear & 0,500 & 0,000 & 0,000 & 0,000 & 0,911 \\
+\nama{ThresholdCalib} & 0,835 & 0,378 & 0,848 & 0,518 & 0,911 \\
+\nama{ProtoNet} & 0,809 & 0,489 & 0,710 & 0,576 & 0,919 \\
+\nama{MMD-linear} & 0,500 & 0,000 & 0,000 & 0,000 & 0,911 \\
 \textit{Fine-tuning} (terbaik\textsuperscript{b}) & 0,742 & 0,690 & 0,520 & 0,558 & 0,949 \\
-\textbf{SafeSteer}\textsuperscript{a} & \textbf{0,842} & 0,441 & \textbf{0,811} & 0,570 & \textbf{0,916} \\
+\textbf{\nama{SafeSteer}}\textsuperscript{a} & \textbf{0,842} & 0,441 & \textbf{0,811} & 0,570 & \textbf{0,916} \\
 \bottomrule
 \end{tabular}}
 \begin{flushleft}
-\footnotesize\textsuperscript{a}SafeSteer dievaluasi pada 20-\textit{shot}, yaitu konfigurasi final penelitian ini berdasarkan evaluasi pada Bagian V-E. Tabel~\ref{tab:ablation} menggunakan 15-\textit{shot} secara seragam untuk mengisolasi kontribusi antarkomponen. ProtoNet mengacu pada \cite{b24}; MMD-linear merupakan kasus linear dari kerangka RKHS-MMD \cite{b14} (Bagian IV-G). \textsuperscript{b}Nilai terbaik dari empat \textit{shot} yang diuji (5/10/15/20 -- BalAcc berturut-turut 0,742/0,712/0,733/0,739); baris ini merupakan hasil 5-\textit{shot}. \textit{Fine-tuning} kini diuji hingga 20-\textit{shot} agar rentang yang dibandingkan dengan SafeSteer (20-\textit{shot}) setara; performa \textit{fine-tuning} tidak meningkat secara monoton seiring jumlah \textit{shot} (Bagian V-D), sehingga hasil terbaik dilaporkan sebagai pembanding.
+\footnotesize\textsuperscript{a}\nama{SafeSteer} dievaluasi pada 20-\textit{shot}, yaitu konfigurasi final penelitian ini berdasarkan evaluasi pada Bagian V-E. Tabel~\ref{tab:ablation} menggunakan 15-\textit{shot} secara seragam untuk mengisolasi kontribusi antarkomponen. \nama{ProtoNet} dan \nama{ThresholdCalib} dievaluasi pada 15-\textit{shot} (konfigurasi dengan hasil POOLED terbaik untuk masing-masing metode); \nama{ProtoNet} mengacu pada \cite{b24}; \nama{MMD-linear} merupakan kasus linear dari kerangka \nama{RKHS-MMD} \cite{b14} (Bagian IV-G) dan bersifat deterministik (dihitung dari seluruh \textit{support pool}, tidak bergantung \textit{seed}). \textsuperscript{b}Nilai terbaik dari empat \textit{shot} yang diuji (5/10/15/20 -- BalAcc berturut-turut 0,742/0,712/0,733/0,739); baris ini merupakan hasil 5-\textit{shot}. \textit{Fine-tuning} kini diuji hingga 20-\textit{shot} agar rentang yang dibandingkan dengan \nama{SafeSteer} (20-\textit{shot}) setara; performa \textit{fine-tuning} tidak meningkat secara monoton seiring jumlah \textit{shot} (Bagian V-D), sehingga hasil terbaik dilaporkan sebagai pembanding.
 \end{flushleft}
 \end{table}
 
 \begin{figure}[h]
-    \centering
-    \includegraphics[width=\columnwidth]
-    {figures/fig4.pdf}
-    \caption{Perbandingan \textit{balanced accuracy}, \textit{recall}, dan
-    AUROC enam metode pada evaluasi POOLED PlasmoID.}
-    \label{fig:barchart}
+\centering
+\includegraphics[width=\columnwidth]{figures/fig3_perbandingan_metode.png}
+\caption{Perbandingan \textit{balanced accuracy}, \textit{recall}, dan \nama{AUROC} seluruh metode, POOLED.}
+\label{fig:barchart}
 \end{figure}
 
-Dibandingkan dengan \textit{zero-shot}, SafeSteer meningkatkan BalAcc dari 0,713 menjadi 0,842, \textit{recall} dari 0,460 menjadi 0,811, dan AUROC dari 0,911 menjadi 0,916. ThresholdCalib mencapai \textit{recall} sedikit lebih tinggi (0,848), tetapi memiliki \textit{precision} yang lebih rendah (0,378) dan AUROC yang tetap sama dengan \textit{zero-shot} (0,911), sesuai sifat kalibrasi ambang yang tidak mengubah peringkat skor. MMD-linear menghasilkan BalAcc 0,500 dan \textit{recall}=0,000, yang menunjukkan prediksi didominasi oleh kelas mayoritas. ProtoNet memberikan BalAcc 0,809 dan AUROC 0,919 pada evaluasi POOLED.
+Dibandingkan dengan \textit{zero-shot}, \nama{SafeSteer} meningkatkan BalAcc dari 0,713 menjadi 0,842, \textit{recall} dari 0,460 menjadi 0,811, dan \nama{AUROC} dari 0,911 menjadi 0,916. \nama{ThresholdCalib} mencapai \textit{recall} sedikit lebih tinggi (0,848), tetapi memiliki \textit{precision} yang lebih rendah (0,378) dan \nama{AUROC} yang tetap sama dengan \textit{zero-shot} (0,911), sesuai sifat kalibrasi ambang yang tidak mengubah peringkat skor. \nama{MMD-linear} menghasilkan BalAcc 0,500 dan \textit{recall}=0,000, yang menunjukkan prediksi didominasi oleh kelas mayoritas. \nama{ProtoNet} memberikan BalAcc 0,809 dan \nama{AUROC} 0,919 pada evaluasi POOLED.
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=\columnwidth]
-    {figures/fig5.pdf}
-    \caption{\textit{Trade-off} \textit{recall} dan \textit{specificity}
-    enam metode pada evaluasi POOLED PlasmoID.}
-    \label{fig:tradeoff}
-\end{figure}
-
-Gambar~\ref{fig:tradeoff} memperlihatkan perbedaan titik operasi antar-metode pada dimensi \textit{recall} dan \textit{specificity}. Pada evaluasi per subgrup, AUROC SafeSteer relatif stabil terhadap \textit{zero-shot}; pada FG terdapat penurunan kecil dari 0,859 menjadi 0,858 (Tabel~\ref{tab:substratum}).
-
-\textit{Fine-tuning} terbaik menghasilkan BalAcc 0,742 pada 5-\textit{shot} dengan AUROC 0,949. Kombinasi AUROC yang tinggi dan BalAcc yang lebih rendah menunjukkan bahwa kemampuan pemeringkatan skor tetap baik, tetapi titik operasi klasifikasi pada konfigurasi tersebut kurang menguntungkan dibandingkan SafeSteer. Varian teregularisasi L2-SP (Bagian IV-G) tidak menghasilkan perbedaan BalAcc yang terukur dibandingkan tanpa regularisasi (0,7291 vs. 0,7291; $p=0{,}32$, uji-t berpasangan pada 60 kombinasi \textit{shot}$\times$\textit{seed}), termasuk pada retensi domain sumber ($\Delta<0{,}001$). Hasil ini menunjukkan bahwa regularisasi L2-SP pada \texttt{layer4} belum memberikan perbaikan terukur pada konfigurasi yang diuji; penyebab ketidakstabilan \textit{fine-tuning} tidak diisolasi lebih lanjut dalam penelitian ini.
-
-Nilai \textit{precision} SafeSteer sebesar 0,441 diinterpretasikan bersama prevalensi kelas terinfeksi pada POOLED ($\sim$10,8\%, 100/923), serta nilai \textit{recall} dan \textit{specificity}. Berdasarkan \textit{recall}=0,811 dan \textit{precision}=0,441, diperoleh \textit{specificity}$\approx$0,873, sehingga sekitar 87,3\% sampel sehat pada \textit{fixed test set} diklasifikasikan sebagai negatif. Hubungan $\text{PPV}=\frac{\text{Sens}\cdot\text{Prev}}{\text{Sens}\cdot\text{Prev}+(1-\text{Spec})(1-\text{Prev})}$ menunjukkan bahwa pada prevalensi rendah, \textit{precision}/PPV sensitif terhadap \textit{false-positive rate}. Karena itu, \textit{precision} diinterpretasikan bersama \textit{recall} dan \textit{specificity}. Titik operasi SafeSteer pada penelitian ini diarahkan untuk mempertahankan \textit{recall} yang tinggi guna mengurangi \textit{false negative} pada konteks skrining.
-
-\subsection{Konsistensi Lintas Subgrup dan Kebutuhan Data}
-Tabel~\ref{tab:substratum} membandingkan performa \textit{zero-shot} dan SafeSteer (20-\textit{shot}) per subgrup.
+Tabel~\ref{tab:stattest} merinci signifikansi statistik selisih BalAcc \nama{SafeSteer} terhadap tiap \textit{baseline} pada Tabel~\ref{tab:master}, menggunakan seluruh 20 \textit{seed} per metode.
 
 \begin{table}[h]
 \centering
-\caption{\textit{Zero-Shot} vs. SafeSteer per Subgrup (\textit{Zero-Shot}$\to$SafeSteer)}
+\caption{Uji Signifikansi \nama{SafeSteer} vs.\ \textit{Baseline} (POOLED, BalAcc)}
+\label{tab:stattest}
+\resizebox{\columnwidth}{!}{
+\begin{tabular}{lrccl}
+\toprule
+\textit{Baseline} & $n$ & \textit{Baseline} (Mean$\pm$SD) & \nama{SafeSteer} (Mean$\pm$SD) & $p$ \\
+\midrule
+ZeroShot & 1\textsuperscript{a} & 0,713 & 0,842$\pm$0,011 & $<0{,}0001$ \\
+\nama{MMD-linear} & 1\textsuperscript{a} & 0,500 & 0,842$\pm$0,011 & $<0{,}0001$ \\
+\nama{ProtoNet} & 20 & 0,809$\pm$0,028 & 0,842$\pm$0,011 & 0,000045 \\
+\textit{Fine-tuning} & 20 & 0,742$\pm$0,084 & 0,842$\pm$0,011 & 0,000037 \\
+\nama{ThresholdCalib} & 20 & 0,835$\pm$0,013 & 0,842$\pm$0,011 & 0,055 \\
+\bottomrule
+\end{tabular}}
+\begin{flushleft}
+\footnotesize Setiap baris membandingkan satu \textit{baseline} dengan \nama{SafeSteer} (20-\textit{shot}) pada metrik BalAcc; nilai \nama{SafeSteer} sama di setiap baris karena metode pembandingnya tetap satu (lihat footnote Tabel~\ref{tab:master} untuk \textit{shot} tiap \textit{baseline}). \textsuperscript{a}ZeroShot dan \nama{MMD-linear} bersifat deterministik (tidak bergantung \textit{seed}, $n=1$, sehingga tidak memiliki SD); diuji dengan \textit{one-sample t-test} (20 hasil \nama{SafeSteer} terhadap nilai tetap \textit{baseline}). \textit{Baseline} lain memiliki 20 hasil per-\textit{seed} sendiri; diuji dengan \textit{Welch's t-test} (varian tidak diasumsikan sama). Seluruh $p$ tetap $<0{,}05$ setelah koreksi \textit{multiple comparisons} (Bonferroni dan Benjamini-Hochberg, $n_{\text{uji}}=5$), kecuali \nama{ThresholdCalib} ($p_{\text{Bonferroni}}=0{,}273$, $p_{\text{FDR}}=0{,}055$).
+\end{flushleft}
+\end{table}
+
+Keunggulan BalAcc \nama{SafeSteer} signifikan secara statistik terhadap ZeroShot, \nama{MMD-linear}, \nama{ProtoNet}, dan \textit{fine-tuning} (seluruh $p<0{,}0001$, tetap signifikan setelah koreksi \textit{multiple comparisons}). Terhadap \nama{ThresholdCalib}, selisih BalAcc tidak mencapai signifikansi konvensional ($p=0{,}055$; hasil serupa diperoleh saat \nama{ThresholdCalib} dievaluasi pada 20-\textit{shot} yang sama dengan \nama{SafeSteer}, $p=0{,}088$), sehingga keunggulan \nama{SafeSteer} atas \nama{ThresholdCalib} tidak bertumpu pada BalAcc semata, melainkan pada \nama{AUROC} (0,916 vs.\ 0,911 -- \nama{ThresholdCalib} identik dengan \textit{zero-shot} karena kalibrasi ambang tidak mengubah peringkat skor) dan \textit{precision} pada \textit{recall} yang sebanding (0,441 vs.\ 0,378), yang menunjukkan perbedaan mendasar pada kapasitas diskriminasi, konsisten dengan Persamaan~\ref{eq:limitation}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\columnwidth]{figures/fig5_recall_specificity.png}
+\caption{Trade-off \textit{recall} vs. \textit{specificity}, POOLED.}
+\label{fig:tradeoff}
+\end{figure}
+
+Gambar~\ref{fig:tradeoff} memperlihatkan perbedaan titik operasi antar-metode pada dimensi \textit{recall} dan \textit{specificity}. Pada evaluasi per subgrup, \nama{AUROC} \nama{SafeSteer} relatif stabil terhadap \textit{zero-shot}; pada FG terdapat penurunan kecil dari 0,859 menjadi 0,858 (Tabel~\ref{tab:substratum}).
+
+\textit{Fine-tuning} terbaik menghasilkan BalAcc 0,742 pada 5-\textit{shot} dengan \nama{AUROC} 0,949. Kombinasi \nama{AUROC} yang tinggi dan BalAcc yang lebih rendah menunjukkan bahwa kemampuan pemeringkatan skor tetap baik, tetapi titik operasi klasifikasi pada konfigurasi tersebut kurang menguntungkan dibandingkan \nama{SafeSteer}. Varian teregularisasi \nama{L2-SP} (Bagian IV-G) tidak menghasilkan perbedaan BalAcc yang terukur dibandingkan tanpa regularisasi (0,7291 vs. 0,7291; $p=0{,}32$, uji-t berpasangan pada 60 kombinasi \textit{shot}$\times$\textit{seed}), termasuk pada retensi domain sumber ($\Delta<0{,}001$). Hasil ini menunjukkan bahwa regularisasi \nama{L2-SP} pada \texttt{layer4} belum memberikan perbaikan terukur pada konfigurasi yang diuji; penyebab ketidakstabilan \textit{fine-tuning} tidak diisolasi lebih lanjut dalam penelitian ini.
+
+Nilai \textit{precision} \nama{SafeSteer} sebesar 0,441 diinterpretasikan bersama prevalensi kelas terinfeksi pada POOLED ($\sim$10,8\%, 100/923), serta nilai \textit{recall} dan \textit{specificity}. Berdasarkan \textit{recall}=0,811 dan \textit{precision}=0,441, diperoleh \textit{specificity}$\approx$0,873, sehingga sekitar 87,3\% sampel sehat pada \textit{fixed test set} diklasifikasikan sebagai negatif. Hubungan $\text{PPV}=\frac{\text{Sens}\cdot\text{Prev}}{\text{Sens}\cdot\text{Prev}+(1-\text{Spec})(1-\text{Prev})}$ menunjukkan bahwa pada prevalensi rendah, \textit{precision}/\nama{PPV} sensitif terhadap \textit{false-positive rate}. Karena itu, \textit{precision} diinterpretasikan bersama \textit{recall} dan \textit{specificity}. Titik operasi \nama{SafeSteer} pada penelitian ini diarahkan untuk mempertahankan \textit{recall} yang tinggi guna mengurangi \textit{false negative} pada konteks skrining.
+
+\subsection{Konsistensi Lintas Subgrup dan Kebutuhan Data}
+Tabel~\ref{tab:substratum} membandingkan performa \textit{zero-shot} dan \nama{SafeSteer} (20-\textit{shot}) per subgrup.
+
+\begin{table}[h]
+\centering
+\caption{\textit{Zero-Shot} vs. \nama{SafeSteer} per Subgrup (\textit{Zero-Shot}$\to$\nama{SafeSteer})}
 \label{tab:substratum}
 \resizebox{\columnwidth}{!}{
 \begin{tabular}{lrccc}
 \toprule
-Stratum & $n$ & BalAcc & Recall & AUROC \\
+Stratum & $n$ & BalAcc & Recall & \nama{AUROC} \\
 \midrule
 POOLED & 923 & 0,713$\to$0,842 & 0,460$\to$0,811 & 0,911$\to$0,916 \\
 FT & 59 & 0,731$\to$0,937 & 0,462$\to$0,885 & 0,997$\to$0,998 \\
@@ -495,24 +495,21 @@ FS\textsuperscript{a} & 25 & 0,818$\to$0,944 & 0,636$\to$0,889 & 1,000$\to$1,000
 \end{flushleft}
 \end{table}
 
-\textit{Balanced accuracy} dan \textit{recall} meningkat pada seluruh subgrup yang ditampilkan, termasuk FG, yaitu subgrup dengan \textit{gap} tipe-diskriminatif pada evaluasi \textit{zero-shot} (Bagian V-B). AUROC secara umum tetap stabil atau meningkat; pada FG terdapat penurunan kecil dari 0,859 menjadi 0,858.
+\textit{Balanced accuracy} dan \textit{recall} meningkat pada seluruh subgrup yang ditampilkan, termasuk FG, yaitu subgrup dengan \textit{gap} tipe-diskriminatif pada evaluasi \textit{zero-shot} (Bagian V-B). \nama{AUROC} secara umum tetap stabil atau meningkat; pada FG terdapat penurunan kecil dari 0,859 menjadi 0,858.
 
-Gambar~\ref{fig:shotstability} menunjukkan \textit{balanced accuracy} POOLED terhadap jumlah \textit{shot}. Mekanisme koreksi dasar (KernelSteer+VoteGate, tanpa kalibrasi \textit{recall}) mencapai kisaran performa yang relatif stabil sejak 5-\textit{shot} (BalAcc 0,779; pada 10--20-\textit{shot} berada pada rentang 0,768--0,786). Pada konfigurasi dengan kalibrasi ambang, variabilitas antar-\textit{seed} menurun hingga standar deviasi 0,011 pada 20-\textit{shot}, dibandingkan 0,022 pada 15-\textit{shot}, dengan BalAcc rata-rata tertinggi sebesar 0,842.
+Gambar~\ref{fig:shotstability} menunjukkan \textit{balanced accuracy} POOLED terhadap jumlah \textit{shot}. Mekanisme koreksi dasar (\nama{KernelSteer}+\nama{VoteGate}, tanpa kalibrasi \textit{recall}) mencapai kisaran performa yang relatif stabil sejak 5-\textit{shot} (BalAcc 0,779; pada 10--20-\textit{shot} berada pada rentang 0,768--0,786). Pada konfigurasi dengan kalibrasi ambang, variabilitas antar-\textit{seed} menurun hingga standar deviasi 0,011 pada 20-\textit{shot}, dibandingkan 0,022 pada 15-\textit{shot}, dengan BalAcc rata-rata tertinggi sebesar 0,842.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=\columnwidth]{figures/fig6.pdf}
-\caption{\textit{Balanced accuracy} POOLED PlasmoID terhadap jumlah sampel
-\textit{support} per kelas pada 20 \textit{seed}. Grafik membandingkan
-KernelSteer+VoteGate tanpa kalibrasi \textit{recall} dan SafeSteer dengan
-kalibrasi \textit{recall} 95\%.}
+\includegraphics[width=\columnwidth]{figures/fig4_shot_vs_stabilitas.png}
+\caption{\textit{Balanced accuracy} (rata-rata $\pm$ std, 20 \textit{seed}) terhadap jumlah \textit{shot}, POOLED.}
 \label{fig:shotstability}
 \end{figure}
 
 Pada konfigurasi yang diuji, performa koreksi dasar mulai mencapai \textit{plateau} sejak 5 sampel per kelas, sedangkan kestabilan kalibrasi meningkat pada 15--20 sampel per kelas. Temuan ini dibatasi pada dataset dan skenario evaluasi yang digunakan dalam penelitian ini.
 
 \subsection{Retensi Domain Sumber dan \textit{Robustness}}
-Tabel~\ref{tab:retention} membandingkan retensi \textit{split test} NLM pasca-adaptasi dan ketahanan terhadap kesalahan penerapan lintas-domain (koreksi PlasmoID diterapkan keliru pada citra NLM).
+Tabel~\ref{tab:retention} membandingkan retensi \textit{split test} \nama{NLM} pasca-adaptasi dan ketahanan terhadap kesalahan penerapan lintas-domain (koreksi \nama{PlasmoID} diterapkan keliru pada citra \nama{NLM}).
 
 \begin{table}[h]
 \centering
@@ -522,65 +519,64 @@ Tabel~\ref{tab:retention} membandingkan retensi \textit{split test} NLM pasca-ad
 \begin{tabular}{lrrr}
 \toprule
 & \multicolumn{1}{c}{Retensi} & \multicolumn{2}{c}{Ketahanan Lintas-Domain\textsuperscript{a}} \\
-& BalAcc NLM & $\Delta$Precision & $\Delta$F1 \\
+& BalAcc \nama{NLM} & $\Delta$Precision & $\Delta$F1 \\
 \midrule
 Sebelum adaptasi & 0,832 & -- & -- \\
-SafeSteer (\textit{training-free}) & 0,832\textsuperscript{b} & $-$0,095 & $-$0,070 \\
+\nama{SafeSteer} (\textit{training-free}) & 0,832\textsuperscript{b} & $-$0,095 & $-$0,070 \\
 \textit{Fine-tuning}, 5-\textit{shot} & 0,672 & -- & -- \\
 \textit{Fine-tuning}, 15-\textit{shot} & 0,643 & -- & -- \\
 \bottomrule
 \end{tabular}}
 \begin{flushleft}
-\footnotesize\textsuperscript{a}Skenario ketahanan (koreksi PlasmoID $\to$ NLM), diuji pada tiga metode: SafeSteer, \textit{fine-tuning}, dan ThresholdCalib. ThresholdCalib pada skenario sama: $\Delta$Prec=$-$0,148, $\Delta$F1=$-$0,126 (paling rentan dari ketiganya). \textsuperscript{b}Identik secara matematis, bobot tidak diperbarui.
+\footnotesize\textsuperscript{a}Skenario ketahanan (koreksi \nama{PlasmoID} $\to$ \nama{NLM}), diuji pada tiga metode: \nama{SafeSteer}, \textit{fine-tuning}, dan \nama{ThresholdCalib}. \nama{ThresholdCalib} pada skenario sama: $\Delta$Prec=$-$0,148, $\Delta$F1=$-$0,126 (paling rentan dari ketiganya). \textsuperscript{b}Identik secara matematis, bobot tidak diperbarui.
 \end{flushleft}
 \end{table}
 
-\textit{Fine-tuning} menurunkan BalAcc NLM sebesar 0,16--0,19 dibandingkan sebelum adaptasi, yang menunjukkan penurunan retensi performa pada domain sumber. SafeSteer mempertahankan BalAcc NLM pada 0,832 karena bobot model sumber tidak diperbarui. Pada skenario kesalahan penerapan lintas-domain, SafeSteer juga menunjukkan penurunan \textit{precision} dan F1 yang lebih kecil dibandingkan ThresholdCalib berdasarkan nilai yang dilaporkan pada Tabel~\ref{tab:retention}. Bobot $w_i(z)$ pada Persamaan~\ref{eq:kernelweight} selalu ternormalisasi ke satu (\textit{softmax}) sehingga tidak secara otomatis meredam $\delta(z)$ untuk kueri yang jauh dari seluruh \textit{support}. Peredaman ini justru berasal dari VoteGate: saat kueri jauh dari seluruh titik \textit{support}, bobot $w_i'(z)$ pada Persamaan~\ref{eq:votegate} mendekati seragam, sehingga $\text{agree}(z)$ mendekati nol karena \textit{support set} dibentuk seimbang per kelas ($N$ sampel tiap kelas) -- bukan karena bobot \textit{kernel} KernelSteer itu sendiri. Mekanisme ini berlaku sistematis untuk citra domain apa pun yang tidak dikenali selama \textit{support set} tetap seimbang antarkelas.
+\textit{Fine-tuning} menurunkan BalAcc \nama{NLM} sebesar 0,16--0,19 dibandingkan sebelum adaptasi, yang menunjukkan penurunan retensi performa pada domain sumber. \nama{SafeSteer} mempertahankan BalAcc \nama{NLM} pada 0,832 karena bobot model sumber tidak diperbarui. Pada skenario kesalahan penerapan lintas-domain, \nama{SafeSteer} juga menunjukkan penurunan \textit{precision} dan F1 yang lebih kecil dibandingkan \nama{ThresholdCalib} berdasarkan nilai yang dilaporkan pada Tabel~\ref{tab:retention}. Bobot $w_i(z)$ pada Persamaan~\ref{eq:kernelweight} selalu ternormalisasi ke satu (\textit{softmax}) sehingga tidak secara otomatis meredam $\delta(z)$ untuk kueri yang jauh dari seluruh \textit{support}. Peredaman ini justru berasal dari \nama{VoteGate}: saat kueri jauh dari seluruh titik \textit{support}, bobot $w_i'(z)$ pada Persamaan~\ref{eq:votegate} mendekati seragam, sehingga $\text{agree}(z)$ mendekati nol karena \textit{support set} dibentuk seimbang per kelas ($N$ sampel tiap kelas) -- bukan karena bobot \textit{kernel} \nama{KernelSteer} itu sendiri. Mekanisme ini berlaku sistematis untuk citra domain apa pun yang tidak dikenali selama \textit{support set} tetap seimbang antarkelas.
 
 \section{KESIMPULAN DAN SARAN}
 
 \subsection{Kesimpulan}
-\textit{Domain gap} antara NLM dan PlasmoID terbukti nyata secara statistik dan menunjukkan pola yang berbeda pada subgrup target. \textit{Classifier} domain yang dilatih hanya pada sel tidak terinfeksi mencapai AUROC=1,0000 ($p=0{,}001$), sementara evaluasi \textit{zero-shot} pada PlasmoID menunjukkan dua bentuk \textit{gap}, yaitu tipe-kalibrasi pada MT/VS/VT dan tipe-diskriminatif pada FG. Hasil ini menunjukkan bahwa perbedaan domain tidak hanya berupa pergeseran \textit{decision threshold}, sehingga mendukung kebutuhan koreksi pada level fitur dan menjawab RQ1.
+\textit{Domain gap} antara \nama{NLM} dan \nama{PlasmoID} terbukti nyata secara statistik dan menunjukkan pola yang berbeda pada subgrup target. \textit{Classifier} domain yang dilatih hanya pada sel tidak terinfeksi mencapai \nama{AUROC}=1,0000 ($p=0{,}001$), sementara evaluasi \textit{zero-shot} pada \nama{PlasmoID} menunjukkan dua bentuk \textit{gap}, yaitu tipe-kalibrasi pada MT/VS/VT dan tipe-diskriminatif pada FG. Hasil ini menunjukkan bahwa perbedaan domain tidak hanya berupa pergeseran \textit{decision threshold}, sehingga mendukung kebutuhan koreksi pada level fitur dan menjawab RQ1.
 
-Penelitian ini mengusulkan SafeSteer, kerangka \textit{training-free} yang menggabungkan KernelSteer, yaitu koreksi \textit{sample-adaptive} berbasis \textit{kernel}; VoteGate, yaitu \textit{confidence-gating} berdasarkan kesepakatan kelas pada tetangga \textit{kernel}; serta kalibrasi ambang berorientasi-\textit{recall}. KernelSteer mengatasi keterbatasan \textit{steering} menggunakan vektor konstan dengan menghasilkan koreksi yang bergantung pada posisi setiap sampel di ruang fitur, sedangkan VoteGate mengatur kekuatan koreksi berdasarkan informasi lokal dari \textit{support set}.
+Penelitian ini mengusulkan \nama{SafeSteer}, kerangka \textit{training-free} yang menggabungkan \nama{KernelSteer}, yaitu koreksi \textit{sample-adaptive} berbasis \textit{kernel}; \nama{VoteGate}, yaitu \textit{confidence-gating} berdasarkan kesepakatan kelas pada tetangga \textit{kernel}; serta kalibrasi ambang berorientasi-\textit{recall}. \nama{KernelSteer} mengatasi keterbatasan \textit{steering} menggunakan vektor konstan dengan menghasilkan koreksi yang bergantung pada posisi setiap sampel di ruang fitur, sedangkan \nama{VoteGate} mengatur kekuatan koreksi berdasarkan informasi lokal dari \textit{support set}.
 
-Menjawab RQ2, SafeSteer meningkatkan \textit{balanced accuracy} POOLED dari 0,713 menjadi 0,842 dan \textit{recall} dari 0,460 menjadi 0,811 dibandingkan \textit{zero-shot} ($p<0{,}0001$ pada seluruh subgrup dengan daya statistik yang memadai). SafeSteer juga melampaui \textit{baseline training-free} yang diuji dan menunjukkan performa yang lebih konsisten dibandingkan \textit{fine-tuning} bertahap, termasuk varian dengan regularisasi L2-SP. Pada rezim data terbatas, \textit{fine-tuning} menunjukkan ketidakstabilan pada domain target dan penurunan performa pada domain sumber. Evaluasi jumlah \textit{support} menunjukkan bahwa 5 sampel per kelas sudah dapat digunakan untuk koreksi domain dasar, sedangkan 15--20 sampel per kelas diperlukan untuk memperoleh kalibrasi ambang yang lebih stabil.
+Menjawab RQ2, \nama{SafeSteer} meningkatkan \textit{balanced accuracy} POOLED dari 0,713 menjadi 0,842 dan \textit{recall} dari 0,460 menjadi 0,811 dibandingkan \textit{zero-shot} ($p<0{,}0001$ pada seluruh subgrup dengan daya statistik yang memadai). \nama{SafeSteer} juga melampaui \textit{baseline training-free} yang diuji dan menunjukkan performa yang lebih konsisten dibandingkan \textit{fine-tuning} bertahap, termasuk varian dengan regularisasi \nama{L2-SP}. Pada rezim data terbatas, \textit{fine-tuning} menunjukkan ketidakstabilan pada domain target dan penurunan performa pada domain sumber. Evaluasi jumlah \textit{support} menunjukkan bahwa 5 sampel per kelas sudah dapat digunakan untuk koreksi domain dasar, sedangkan 15--20 sampel per kelas diperlukan untuk memperoleh kalibrasi ambang yang lebih stabil.
 
-Sifat \textit{training-free} SafeSteer memungkinkan adaptasi domain tanpa memperbarui bobot model, dengan kebutuhan data yang relatif kecil. Hal ini menunjukkan potensi SafeSteer sebagai pendekatan adaptasi domain pada lingkungan dengan keterbatasan infrastruktur komputasi.
-
+Sifat \textit{training-free} \nama{SafeSteer} memungkinkan adaptasi domain tanpa memperbarui bobot model, dengan kebutuhan data yang relatif kecil. Hal ini menunjukkan potensi \nama{SafeSteer} sebagai pendekatan adaptasi domain pada lingkungan dengan keterbatasan infrastruktur komputasi.
 
 \subsection{Keterbatasan Penelitian}
-Penelitian ini memiliki beberapa keterbatasan. Pertama, evaluasi dilakukan menggunakan \textit{split} data retrospektif sehingga belum merepresentasikan alur kerja pemeriksaan malaria secara langsung di lapangan. Kedua, beberapa subgrup pada PlasmoID masih memiliki jumlah sampel evaluasi yang terbatas, khususnya skizon \textit{falciparum} dan sebagian stadium \textit{vivax}, sehingga klaim mengenai ketahanan lintas-spesies pada subgrup tersebut masih terbatas. Ketiga, sistem masih bergantung pada anotasi lokasi sel untuk membentuk \textit{patch}, sehingga SafeSteer belum mencakup proses deteksi atau segmentasi otomatis dari citra lapangan pandang secara keseluruhan. Keempat, evaluasi masih terbatas pada dataset NLM/PlasmoID dan arsitektur ResNet-18, sehingga generalisasi SafeSteer pada dataset, lokasi akuisisi, dan arsitektur \textit{backbone} lain belum dapat dipastikan. Selain itu, SafeSteer masih mengasumsikan tersedianya \textit{support set} awal yang telah diverifikasi oleh tenaga mikroskopis terlatih.
+Penelitian ini memiliki beberapa keterbatasan. Pertama, evaluasi dilakukan menggunakan \textit{split} data retrospektif sehingga belum merepresentasikan alur kerja pemeriksaan malaria secara langsung di lapangan. Kedua, beberapa subgrup pada \nama{PlasmoID} masih memiliki jumlah sampel evaluasi yang terbatas, khususnya skizon \textit{falciparum} dan sebagian stadium \textit{vivax}, sehingga klaim mengenai ketahanan lintas-spesies pada subgrup tersebut masih terbatas. Ketiga, sistem masih bergantung pada anotasi lokasi sel untuk membentuk \textit{patch}, sehingga \nama{SafeSteer} belum mencakup proses deteksi atau segmentasi otomatis dari citra lapangan pandang secara keseluruhan. Keempat, evaluasi masih terbatas pada dataset \nama{NLM}/\nama{PlasmoID} dan arsitektur \nama{ResNet-18}, sehingga generalisasi \nama{SafeSteer} pada dataset, lokasi akuisisi, dan arsitektur \textit{backbone} lain belum dapat dipastikan. Selain itu, \nama{SafeSteer} masih mengasumsikan tersedianya \textit{support set} awal yang telah diverifikasi oleh tenaga mikroskopis terlatih.
 
 \subsection{Saran Penelitian}
-Penelitian lanjutan dapat diarahkan pada beberapa aspek. Pertama, dilakukan validasi prospektif di lapangan bersama tenaga mikroskopis terlatih untuk mengukur performa SafeSteer pada alur kerja nyata. Kedua, jumlah sampel pada subgrup yang masih \textit{underpowered}, khususnya skizon \textit{falciparum} dan sebagian stadium \textit{vivax}, perlu ditingkatkan agar ketahanan metode terhadap keragaman spesies dapat dievaluasi dengan daya statistik yang lebih memadai. Ketiga, SafeSteer dapat diintegrasikan dengan modul deteksi atau segmentasi otomatis sehingga sistem tidak lagi bergantung pada anotasi lokasi sel manual dan dapat dikembangkan menuju alur \textit{end-to-end} dari citra lapangan pandang. Keempat, evaluasi dapat diperluas pada dataset, lokasi akuisisi, dan arsitektur \textit{backbone} lain untuk menguji generalisasi SafeSteer. Pengembangan protokol inisiasi jarak jauh untuk verifikasi \textit{support set} melalui \textit{telemedicine} serta kompresi \textit{backbone}, seperti kuantisasi atau distilasi, juga dapat dipertimbangkan untuk skenario \textit{deployment} dengan sumber daya komputasi yang lebih terbatas.
+Penelitian lanjutan dapat diarahkan pada beberapa aspek. Pertama, dilakukan validasi prospektif di lapangan bersama tenaga mikroskopis terlatih untuk mengukur performa \nama{SafeSteer} pada alur kerja nyata. Kedua, jumlah sampel pada subgrup yang masih \textit{underpowered}, khususnya skizon \textit{falciparum} dan sebagian stadium \textit{vivax}, perlu ditingkatkan agar ketahanan metode terhadap keragaman spesies dapat dievaluasi dengan daya statistik yang lebih memadai. Ketiga, \nama{SafeSteer} dapat diintegrasikan dengan modul deteksi atau segmentasi otomatis sehingga sistem tidak lagi bergantung pada anotasi lokasi sel manual dan dapat dikembangkan menuju alur \textit{end-to-end} dari citra lapangan pandang. Keempat, evaluasi dapat diperluas pada dataset, lokasi akuisisi, dan arsitektur \textit{backbone} lain untuk menguji generalisasi \nama{SafeSteer}. Pengembangan protokol inisiasi jarak jauh untuk verifikasi \textit{support set} melalui \textit{telemedicine} serta kompresi \textit{backbone}, seperti kuantisasi atau distilasi, juga dapat dipertimbangkan untuk skenario \textit{deployment} dengan sumber daya komputasi yang lebih terbatas.
 
 \renewcommand{\refname}{REFERENSI}
 \begin{thebibliography}{00}
-\bibitem{b1} World Health Organization, ``World Malaria Report 2025: Addressing the Threat of Antimalarial Drug Resistance,'' WHO, Geneva, Switzerland, 2025.
-\bibitem{b2} M. K. Kanakasabapathy \textit{et al.}, ``Adaptive adversarial neural networks for the analysis of lossy and domain-shifted datasets of medical images,'' \textit{Nature Biomedical Engineering}, vol. 5, no. 6, pp. 571--585, 2021.
-\bibitem{b3} J. Gatc, Y. D. Prabowo, Rudy, A. Corradini, A. C. Septianto, and F. Maspiyanti, ``Few-shot learning for malaria cell classification: A comparative study of CNN backbones on the NIH dataset,'' in \textit{Proc. 5th Int. Conf. Intelligent Cybernetics Technology \& Applications (ICICYTA)}, IEEE, 2025, pp. 286--291.
-\bibitem{b4} S. Adebayo \textit{et al.}, ``Enhanced detection of malaria parasites in resource constraint environment using data-efficient image transformer,'' \textit{Intelligence-Based Medicine}, vol. 15, p. 100424, 2026.
-\bibitem{b5} K. K. Napa \textit{et al.}, ``FedPDM-Net: a federated prototype-guided disentangled deep learning framework for explainable malaria detection,'' \textit{Scientific Reports}, vol. 16, Art. no. 154887, 2026.
-\bibitem{b6} M. Chossegros, F. Delhommeau, D. Stockholm, and X. Tannier, ``Improving the generalizability of white blood cell classification with few-shot domain adaptation,'' \textit{Journal of Pathology Informatics}, vol. 15, p. 100405, 2024.
-\bibitem{b7} B. Xu, Z. Zeng, C. Lian, and Z. Ding, ``Few-shot domain adaptation via mixup optimal transport,'' \textit{IEEE Transactions on Image Processing}, vol. 31, pp. 2518--2530, 2022.
-\bibitem{b8} R. Wang and G. Zheng, ``PFMNet: Prototype-based feature mapping network for few-shot domain adaptation in medical image segmentation,'' \textit{Computerized Medical Imaging and Graphics}, vol. 116, p. 102406, 2024.
-\bibitem{b9} M. R. Keaton, R. J. Zaveri, and G. Doretto, ``CellTranspose: Few-shot domain adaptation for cellular instance segmentation,'' \textit{arXiv preprint arXiv:2212.14121}, 2022.
-\bibitem{b10} A. M. Turner, L. Thiergart, G. Leech, D. Udell, U. Mini, and M. MacDiarmid, ``Activation addition: Steering language models without optimization,'' \textit{arXiv preprint arXiv:2308.10248}, 2023.
-\bibitem{b11} N. Rimsky, N. Gabrieli, J. Schulz, M. Tong, E. Hubinger, and A. M. Turner, ``Steering Llama 2 via contrastive activation addition,'' in \textit{Proc. 62nd Annual Meeting of the Association for Computational Linguistics (ACL)}, vol. 1, 2024, pp. 15504--15522.
-\bibitem{b12} T. Koleilat, H. Rivaz, and Y. Xiao, ``Evi-Steer: Learning to steer biomedical vision-language models through efficient and generalizable evidential tuning,'' in \textit{Proc. Int. Conf. Medical Image Computing and Computer-Assisted Intervention (MICCAI)}, 2026, to appear. arXiv:2605.26292.
-\bibitem{b13} Y. Zhu and H. Zhang, ``MAUP: Training-free multi-center adaptive uncertainty-aware prompting for cross-domain few-shot medical image segmentation,'' \textit{arXiv preprint arXiv:2508.03511}, 2025.
-\bibitem{b14} S. Sachan, R. K. Sanodiya, and A. K. Mahto, ``A robust unsupervised domain adaptation framework for medical image classification using RKHS-MMD,'' \textit{arXiv preprint arXiv:2605.03787}, 2026.
-\bibitem{b15} S. Rajaraman \textit{et al.}, ``Pre-trained convolutional neural networks as feature extractors toward improved malaria parasite detection in thin blood smear images,'' \textit{PeerJ}, vol. 6, p. e4568, 2018.
-\bibitem{b16} O. Vinyals, C. Blundell, T. Lillicrap, K. Kavukcuoglu, and D. Wierstra, ``Matching networks for one shot learning,'' in \textit{Advances in Neural Information Processing Systems (NeurIPS)}, vol. 29, 2016.
-\bibitem{b17} Y. Bendou, A. Ouasfi, V. Gripon, and A. Boukhayma, ``ProKeR: A kernel perspective on few-shot adaptation of large vision-language models,'' in \textit{Proc. IEEE/CVF Conf. Computer Vision and Pattern Recognition (CVPR)}, 2025.
-\bibitem{b18} D. Garreau, W. Jitkrittum, and M. Kanagawa, ``Large sample analysis of the median heuristic,'' \textit{arXiv preprint arXiv:1707.07269}, 2017.
-\bibitem{b19} C. Guo, G. Pleiss, Y. Sun, and K. Q. Weinberger, ``On calibration of modern neural networks,'' in \textit{Proc. 34th Int. Conf. Machine Learning (ICML)}, vol. 70, 2017, pp. 1321--1330.
-\bibitem{b20} S. A. Dudani, ``The distance-weighted k-nearest-neighbor rule,'' \textit{IEEE Transactions on Systems, Man, and Cybernetics}, vol. SMC-6, no. 4, pp. 325--327, 1976.
-\bibitem{b21} M. Karpusha, S. Yun, and I. Fehérvári, ``Calibrated neighborhood aware confidence measure for deep metric learning,'' \textit{arXiv preprint arXiv:2006.04935}, 2020.
-\bibitem{b22} H. A. Nugroho, R. Nurfauzi, E. E. H. Murhandarwati, and P. Purwono, ``PlasmoID: A dataset for Indonesian malaria parasite detection and segmentation in thin blood smear,'' \textit{arXiv preprint arXiv:2211.15105}, 2022.
-\bibitem{b23} K. He, X. Zhang, S. Ren, and J. Sun, ``Deep residual learning for image recognition,'' in \textit{Proc. IEEE Conf. Computer Vision and Pattern Recognition (CVPR)}, 2016, pp. 770--778.
-\bibitem{b24} J. Snell, K. Swersky, and R. Zemel, ``Prototypical networks for few-shot learning,'' in \textit{Advances in Neural Information Processing Systems (NeurIPS)}, vol. 30, 2017.
+\bibitem{b1} World Health Organization, `World Malaria Report 2025: Addressing the Threat of Antimalarial Drug Resistance,'' WHO, Geneva, Switzerland, 2025.
+\bibitem{b2} M. K. Kanakasabapathy \textit{et al.}, `Adaptive adversarial neural networks for the analysis of lossy and domain-shifted datasets of medical images,'' \textit{Nature Biomedical Engineering}, vol. 5, no. 6, pp. 571--585, 2021.
+\bibitem{b3} J. Gatc, Y. D. Prabowo, Rudy, A. Corradini, A. C. Septianto, and F. Maspiyanti, `Few-shot learning for malaria cell classification: A comparative study of CNN backbones on the NIH dataset,'' in \textit{Proc. 5th Int. Conf. Intelligent Cybernetics Technology \& Applications (ICICYTA)}, IEEE, 2025, pp. 286--291.
+\bibitem{b4} S. Adebayo \textit{et al.}, `Enhanced detection of malaria parasites in resource constraint environment using data-efficient image transformer,'' \textit{Intelligence-Based Medicine}, vol. 15, p. 100424, 2026.
+\bibitem{b5} K. K. Napa \textit{et al.}, `FedPDM-Net: a federated prototype-guided disentangled deep learning framework for explainable malaria detection,'' \textit{Scientific Reports}, vol. 16, Art. no. 154887, 2026.
+\bibitem{b6} M. Chossegros, F. Delhommeau, D. Stockholm, and X. Tannier, `Improving the generalizability of white blood cell classification with few-shot domain adaptation,'' \textit{Journal of Pathology Informatics}, vol. 15, p. 100405, 2024.
+\bibitem{b7} B. Xu, Z. Zeng, C. Lian, and Z. Ding, `Few-shot domain adaptation via mixup optimal transport,'' \textit{IEEE Transactions on Image Processing}, vol. 31, pp. 2518--2530, 2022.
+\bibitem{b8} R. Wang and G. Zheng, `PFMNet: Prototype-based feature mapping network for few-shot domain adaptation in medical image segmentation,'' \textit{Computerized Medical Imaging and Graphics}, vol. 116, p. 102406, 2024.
+\bibitem{b9} M. R. Keaton, R. J. Zaveri, and G. Doretto, `CellTranspose: Few-shot domain adaptation for cellular instance segmentation,'' \textit{arXiv preprint arXiv:2212.14121}, 2022.
+\bibitem{b10} A. M. Turner, L. Thiergart, G. Leech, D. Udell, U. Mini, and M. MacDiarmid, `Activation addition: Steering language models without optimization,'' \textit{arXiv preprint arXiv:2308.10248}, 2023.
+\bibitem{b11} N. Rimsky, N. Gabrieli, J. Schulz, M. Tong, E. Hubinger, and A. M. Turner, `Steering Llama 2 via contrastive activation addition,'' in \textit{Proc. 62nd Annual Meeting of the Association for Computational Linguistics (ACL)}, vol. 1, 2024, pp. 15504--15522.
+\bibitem{b12} T. Koleilat, H. Rivaz, and Y. Xiao, `Evi-Steer: Learning to steer biomedical vision-language models through efficient and generalizable evidential tuning,'' in \textit{Proc. Int. Conf. Medical Image Computing and Computer-Assisted Intervention (MICCAI)}, 2026, to appear. arXiv:2605.26292.
+\bibitem{b13} Y. Zhu and H. Zhang, `MAUP: Training-free multi-center adaptive uncertainty-aware prompting for cross-domain few-shot medical image segmentation,'' \textit{arXiv preprint arXiv:2508.03511}, 2025.
+\bibitem{b14} S. Sachan, R. K. Sanodiya, and A. K. Mahto, `A robust unsupervised domain adaptation framework for medical image classification using RKHS-MMD,'' \textit{arXiv preprint arXiv:2605.03787}, 2026.
+\bibitem{b15} S. Rajaraman \textit{et al.}, `Pre-trained convolutional neural networks as feature extractors toward improved malaria parasite detection in thin blood smear images,'' \textit{PeerJ}, vol. 6, p. e4568, 2018.
+\bibitem{b16} O. Vinyals, C. Blundell, T. Lillicrap, K. Kavukcuoglu, and D. Wierstra, `Matching networks for one shot learning,'' in \textit{Advances in Neural Information Processing Systems (NeurIPS)}, vol. 29, 2016.
+\bibitem{b17} Y. Bendou, A. Ouasfi, V. Gripon, and A. Boukhayma, `ProKeR: A kernel perspective on few-shot adaptation of large vision-language models,'' in \textit{Proc. IEEE/CVF Conf. Computer Vision and Pattern Recognition (CVPR)}, 2025.
+\bibitem{b18} D. Garreau, W. Jitkrittum, and M. Kanagawa, `Large sample analysis of the median heuristic,'' \textit{arXiv preprint arXiv:1707.07269}, 2017.
+\bibitem{b19} C. Guo, G. Pleiss, Y. Sun, and K. Q. Weinberger, `On calibration of modern neural networks,'' in \textit{Proc. 34th Int. Conf. Machine Learning (ICML)}, vol. 70, 2017, pp. 1321--1330.
+\bibitem{b20} S. A. Dudani, `The distance-weighted k-nearest-neighbor rule,'' \textit{IEEE Transactions on Systems, Man, and Cybernetics}, vol. SMC-6, no. 4, pp. 325--327, 1976.
+\bibitem{b21} M. Karpusha, S. Yun, and I. Fehérvári, `Calibrated neighborhood aware confidence measure for deep metric learning,'' \textit{arXiv preprint arXiv:2006.04935}, 2020.
+\bibitem{b22} H. A. Nugroho, R. Nurfauzi, E. E. H. Murhandarwati, and P. Purwono, `PlasmoID: A dataset for Indonesian malaria parasite detection and segmentation in thin blood smear,'' \textit{arXiv preprint arXiv:2211.15105}, 2022.
+\bibitem{b23} K. He, X. Zhang, S. Ren, and J. Sun, `Deep residual learning for image recognition,'' in \textit{Proc. IEEE Conf. Computer Vision and Pattern Recognition (CVPR)}, 2016, pp. 770--778.
+\bibitem{b24} J. Snell, K. Swersky, and R. Zemel, `Prototypical networks for few-shot learning,'' in \textit{Advances in Neural Information Processing Systems (NeurIPS)}, vol. 30, 2017.
 \bibitem{b25} X. Li, Y. Grandvalet, and F. Davoine, ``Explicit inductive bias for transfer learning with convolutional networks,'' in \textit{Proc. 35th Int. Conf. Machine Learning (ICML)}, 2018, pp. 2825--2834.
 \end{thebibliography}
 \end{document}

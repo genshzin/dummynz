@@ -267,6 +267,7 @@ Gambar~\ref{fig:konsepkernelsteer} mengilustrasikan perbedaan konseptual antara 
     \label{fig:konsepkernelsteer}
 \end{figure}
 
+
 \subsection{Kalibrasi Ambang Berorientasi-\textit{Recall}}
 Kalibrasi ambang keputusan dilakukan secara terpisah dari mekanisme koreksi fitur. Dari kandidat ambang yang mencapai \textit{recall} $\geq$95\% pada skor \textit{support set} $N$-\textit{shot} yang sama dipakai untuk koreksi pada \textit{seed} tersebut (bukan seluruh \textit{support pool}) setelah KernelSteer+VoteGate diterapkan pada \textit{support set} itu sendiri, dipilih ambang dengan \textit{specificity} tertinggi. Ambang yang diperoleh kemudian ditetapkan dan diterapkan pada \textit{fixed test set}. Prosedur kalibrasi tidak mengubah $\delta(z)$ maupun $\alpha_{\text{eff}}(z)$, tetapi hanya menentukan titik operasi klasifikasi. Skor kalibrasi ini dihitung tanpa skema \textit{leave-one-out}, sehingga tiap sampel \textit{support} turut menjadi tetangganya sendiri (jarak nol, bobot maksimal) saat menghitung skornya sendiri -- berpotensi membuat skor kalibrasi sedikit lebih optimistis dibanding performa pada sampel yang benar-benar baru. Ambang yang dihasilkan tetap diuji secara independen pada \textit{fixed test set} yang tidak pernah dipakai untuk menentukan ambang, sehingga metrik performa utama yang dilaporkan tidak terpengaruh; bias ini hanya berpotensi memengaruhi presisi pemilihan titik ambang itu sendiri.
 
